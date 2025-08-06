@@ -1,6 +1,5 @@
 {
   "name": "@krnjs/react-ui",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "dist/index.js",
