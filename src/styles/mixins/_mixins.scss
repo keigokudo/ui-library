@@ -1,0 +1,27 @@
+// src/styles/mixins/_mixins.scss
+@use "../_variables.scss" as tokens;
+
+// Mixin for responsive design
+// Usage: @include respond-up(sm) { ... }
+// Breakpoints: sm, md, lg, xl, 2xl
+@mixin respond-up($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: tokens.$breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: tokens.$breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: tokens.$breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: tokens.$breakpoint-xl) {
+      @content;
+    }
+  } @else {
+    @warn "Invalid breakpoint: #{$breakpoint}";
+  }
+}
