@@ -1,10 +1,14 @@
-.button {
-  background-color: #0070f3;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+@use "../../styles/variables" as t;
+@use "../../styles/mixins/mixins" as mixins;
 
-  &:hover {
-    background-color: #005bb5;
+.button {
+  padding: t.$space-sm t.$space-md;
+  font-size: t.$font-sm;
+  background-color: t.$color-primary;
+  border-radius: t.$radius-sm;
+
+  @include mixins.respond-up(md) {
+    font-size: t.$font-md;
+    padding: t.$space-md t.$space-lg;
   }
 }
