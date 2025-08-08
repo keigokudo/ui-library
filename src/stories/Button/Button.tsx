@@ -1,4 +1,4 @@
-import styles from "./Button.module.scss";
+import styles from "./button.module.scss";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "contained" | "outlined" | "text";
