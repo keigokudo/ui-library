@@ -1,0 +1,105 @@
+// =====================================
+// Spacing Scale (based on 4px grid)
+// =====================================
+$space-0: 0;
+$space-xs: 0.25rem; // 4px
+$space-sm: 0.5rem; // 8px
+$space-md: 1rem; // 16px
+$space-lg: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-2xl: 3rem; // 48px
+
+// =====================================
+// Typography Scale
+// =====================================
+$font-xs: 0.75rem; // 12px
+$font-sm: 0.875rem; // 14px
+$font-md: 1rem; // 16px
+$font-lg: 1.25rem; // 20px
+$font-xl: 1.5rem; // 24px
+$font-2xl: 2rem; // 32px
+
+$line-tight: 1.25;
+$line-normal: 1.5;
+$line-loose: 1.75;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// =====================================
+// Color Palette (Base Tokens)
+// =====================================
+
+// --- Primary Brand Colors ---
+$color-primary: #1a73e8;
+$color-primary-variant: #0c47b7;
+
+// --- Secondary Brand Colors ---
+$color-secondary: #5f6368;
+
+// --- Semantic Status Colors ---
+$color-error: #d93025;
+$color-success: #188038;
+$color-warning: #e37400;
+$color-info: #0288d1;
+
+// --- Neutral Grayscale ---
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray-50: #f9fafb;
+$color-gray-100: #f3f4f6;
+$color-gray-200: #e5e7eb;
+$color-gray-300: #d1d5db;
+$color-gray-400: #9ca3af;
+$color-gray-500: #6b7280;
+$color-gray-600: #4b5563;
+$color-gray-700: #374151;
+$color-gray-800: #1f2937;
+$color-gray-900: #111827;
+
+// =====================================
+// Semantic Color Usage
+// =====================================
+
+$color-background: $color-gray-50; // App background
+$color-surface: $color-white; // Surface containers (cards, sheets)
+$color-border: $color-gray-200; // Borders and dividers
+
+$color-on-primary: $color-white; // Text/icons on primary background
+$color-on-surface: $color-gray-900; // Text/icons on surface
+$color-on-background: $color-gray-800; // Text/icons on app background
+$color-disabled: $color-gray-400; // Disabled text or icons
+
+// =====================================
+// Border Radius
+// =====================================
+$radius-xs: 2px;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-full: 9999px; // Fully rounded (e.g. circle or pill)
+
+// =====================================
+// Shadow
+// =====================================
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+// =====================================
+// Z-Index Scale
+// =====================================
+$z-base: 0;
+$z-dropdown: 1000;
+$z-modal: 2000;
+$z-toast: 3000;
+
+// =====================================
+// Breakpoints
+// =====================================
+$breakpoint-sm: 480px; // Mobile
+$breakpoint-md: 768px; // Tablet
+$breakpoint-lg: 1024px; // Small Desktop
+$breakpoint-xl: 1280px; // Large Desktop
+$breakpoint-2xl: 1536px; // Extra Large Desktop
