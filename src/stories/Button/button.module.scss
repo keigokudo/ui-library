@@ -2,13 +2,110 @@
 @use "../../styles/mixins/mixins" as mixins;
 
 .button {
-  padding: t.$space-sm t.$space-md;
-  font-size: t.$font-sm;
-  background-color: t.$color-primary;
-  border-radius: t.$radius-sm;
+  // Typography semantics
+  font-weight: t.$font-weight-emphasis;
+  font-size: t.$font-size-label;
+  line-height: t.$line-height-compact;
 
+  // Layout semantics
+  min-width: 4rem;
+  padding: t.$space-component-padding-sm t.$space-component-padding-md;
+  border-radius: t.$radius-button;
+
+  // Interaction semantics
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  border: none;
+  outline: none;
+  user-select: none;
+
+  // Display semantics
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  // Color semantics - Primary button (default)
+  color: t.$color-text-inverse;
+  background-color: t.$color-interactive-default;
+  box-shadow: t.$shadow-card;
+
+  &:hover:not(:disabled) {
+    background-color: t.$color-interactive-hover;
+    box-shadow: t.$shadow-dropdown;
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: t.$color-surface-variant;
+    color: t.$color-text-disabled;
+    box-shadow: none;
+  }
+
+  // Focus state using semantic focus styling
+  &:focus-visible {
+    box-shadow: t.$shadow-focus;
+    outline: none;
+  }
+
+  // Variant: outlined
+  &.outlined {
+    background-color: transparent;
+    color: t.$color-text-link;
+    border: t.$border-width-outlined solid t.$color-border-interactive;
+    box-shadow: none;
+    padding: calc(t.$space-component-padding-sm - t.$border-width-outlined)
+      t.$space-component-padding-md; // adjust for border
+
+    &:hover:not(:disabled) {
+      background-color: t.$color-interactive-default;
+      color: t.$color-text-inverse;
+      box-shadow: t.$shadow-card;
+      border-color: t.$color-interactive-hover;
+    }
+
+    &:focus-visible {
+      border-color: t.$color-interactive-default;
+      box-shadow: t.$shadow-focus;
+    }
+
+    &:disabled {
+      border-color: t.$color-border-subtle;
+      color: t.$color-text-disabled;
+      background-color: transparent;
+    }
+  }
+
+  // Variant: text
+  &.text {
+    background-color: transparent;
+    color: t.$color-text-link;
+    box-shadow: none;
+    padding: t.$space-component-padding-sm t.$space-component-padding-md;
+
+    &:hover:not(:disabled) {
+      background-color: t.$color-surface-variant;
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      background-color: t.$color-surface-variant;
+      box-shadow: t.$shadow-focus;
+    }
+
+    &:disabled {
+      color: t.$color-text-disabled;
+    }
+  }
+
+  // Responsive font size increase at md breakpoint
   @include mixins.respond-up(md) {
-    font-size: t.$font-md;
-    padding: t.$space-md t.$space-lg;
+    font-size: t.$font-lg;
+    padding: t.$space-component-padding-md t.$space-component-padding-lg;
+
+    &.outlined {
+      padding: calc(t.$space-component-padding-md - t.$border-width-outlined)
+        t.$space-component-padding-lg;
+    }
   }
 }

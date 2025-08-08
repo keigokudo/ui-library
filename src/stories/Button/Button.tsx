@@ -1,37 +1,22 @@
-import styles from "./button.module.scss";
+import styles from "./Button.module.scss";
 
-export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: "small" | "medium" | "large";
-  /** Button contents */
-  label: string;
-  /** Optional click handler */
-  onClick?: () => void;
-}
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: "contained" | "outlined" | "text";
+};
 
-/** Primary UI component for user interaction */
-export const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
+export default function Button({
+  children,
+  variant = "contained",
   ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+}: ButtonProps) {
+  const classNames = [styles.button];
+  if (variant !== "contained") {
+    classNames.push(styles[variant]);
+  }
+
   return (
-    <button
-      type="button"
-      className={styles.button}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
+    <button className={classNames.join(" ")} {...props}>
+      {children}
     </button>
   );
-};
+}
