@@ -2,11 +2,12 @@ import styles from "./button.module.scss";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "contained" | "outlined" | "text";
+  children: React.ReactNode;
 };
 
 export default function Button({
-  children,
   variant = "contained",
+  children,
   ...props
 }: ButtonProps) {
   const classNames = [styles.button];
