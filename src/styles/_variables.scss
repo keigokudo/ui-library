@@ -1,6 +1,20 @@
 // =====================================
-// Spacing Scale (based on 4px grid)
+// Token usage policy:
 // =====================================
+// Prefer using semantic tokens (e.g. $font-size-label, $color-text-primary)
+// for better clarity and design consistency.
+//
+// However, if a semantic token does not semantically match the use case,
+// use base tokens (e.g. $font-sm, $color-gray-700) directly
+// to avoid misleading naming and maintain flexibility.
+//
+// This hybrid approach ensures both meaning and practicality.
+
+// =====================================
+// Base Design Tokens
+// =====================================
+
+// --- Spacing Scale (based on 4px grid) ---
 $space-0: 0;
 $space-xs: 0.25rem; // 4px
 $space-sm: 0.5rem; // 8px
@@ -9,9 +23,7 @@ $space-lg: 1.5rem; // 24px
 $space-xl: 2rem; // 32px
 $space-2xl: 3rem; // 48px
 
-// =====================================
-// Typography Scale
-// =====================================
+// --- Typography Scale ---
 $font-xs: 0.75rem; // 12px
 $font-sm: 0.875rem; // 14px
 $font-md: 1rem; // 16px
@@ -27,24 +39,21 @@ $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
-// =====================================
-// Color Palette (Base Tokens)
-// =====================================
-
-// --- Primary Brand Colors ---
+// --- Color Palette (Base Tokens) ---
+// Primary Brand Colors
 $color-primary: #1a73e8;
 $color-primary-variant: #0c47b7;
 
-// --- Secondary Brand Colors ---
+// Secondary Brand Colors
 $color-secondary: #5f6368;
 
-// --- Semantic Status Colors ---
+// Semantic Status Colors
 $color-error: #d93025;
 $color-success: #188038;
 $color-warning: #e37400;
 $color-info: #0288d1;
 
-// --- Neutral Grayscale ---
+// Neutral Grayscale
 $color-white: #ffffff;
 $color-black: #000000;
 $color-gray-50: #f9fafb;
@@ -58,48 +67,123 @@ $color-gray-700: #374151;
 $color-gray-800: #1f2937;
 $color-gray-900: #111827;
 
-// =====================================
-// Semantic Color Usage
-// =====================================
+// --- Border Width Scale ---
+$border-width-none: 0;
+$border-width-thin: 1px;
+$border-width-medium: 1.5px;
+$border-width-thick: 2px;
+$border-width-heavy: 3px;
 
-$color-background: $color-gray-50; // App background
-$color-surface: $color-white; // Surface containers (cards, sheets)
-$color-border: $color-gray-200; // Borders and dividers
-
-$color-on-primary: $color-white; // Text/icons on primary background
-$color-on-surface: $color-gray-900; // Text/icons on surface
-$color-on-background: $color-gray-800; // Text/icons on app background
-$color-disabled: $color-gray-400; // Disabled text or icons
-
-// =====================================
-// Border Radius
-// =====================================
+// --- Border Radius Scale ---
 $radius-xs: 2px;
 $radius-sm: 4px;
 $radius-md: 8px;
 $radius-lg: 16px;
 $radius-full: 9999px; // Fully rounded (e.g. circle or pill)
 
-// =====================================
-// Shadow
-// =====================================
+// --- Shadow Scale ---
 $shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
 $shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
 $shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.2);
 
-// =====================================
-// Z-Index Scale
-// =====================================
+// --- Z-Index Scale ---
 $z-base: 0;
 $z-dropdown: 1000;
 $z-modal: 2000;
 $z-toast: 3000;
 
-// =====================================
-// Breakpoints
-// =====================================
+// --- Breakpoints ---
 $breakpoint-sm: 480px; // Mobile
 $breakpoint-md: 768px; // Tablet
 $breakpoint-lg: 1024px; // Small Desktop
 $breakpoint-xl: 1280px; // Large Desktop
 $breakpoint-2xl: 1536px; // Extra Large Desktop
+
+// =====================================
+// Semantic Design Tokens
+// =====================================
+
+// --- Layout & Spacing Semantics ---
+$space-component-padding-sm: $space-sm; // Small component internal padding
+$space-component-padding-md: $space-md; // Medium component internal padding
+$space-component-padding-lg: $space-lg; // Large component internal padding
+$space-component-gap: $space-md; // Gap between related components
+$space-section-gap: $space-xl; // Gap between major sections
+$space-page-margin: $space-lg; // Page container margins
+
+// --- Typography Semantics ---
+$font-size-caption: $font-xs; // Captions, helper text
+$font-size-body: $font-sm; // Body text, descriptions
+$font-size-label: $font-md; // Form labels, buttons
+$font-size-title: $font-lg; // Card titles, section headers
+$font-size-heading: $font-xl; // Page headings
+$font-size-display: $font-2xl; // Hero text, main displays
+
+$line-height-compact: $line-tight; // Dense layouts, buttons
+$line-height-comfortable: $line-normal; // Body text, forms
+$line-height-relaxed: $line-loose; // Large text, headings
+
+$font-weight-normal: $font-weight-regular; // Body text
+$font-weight-emphasis: $font-weight-medium; // Labels, captions
+$font-weight-strong: $font-weight-bold; // Headings, important text
+
+// --- Color Semantics ---
+// Background Colors
+$color-background: $color-gray-50; // App background
+$color-surface: $color-white; // Surface containers (cards, sheets)
+$color-surface-variant: $color-gray-100; // Alternative surface
+$color-overlay: rgba($color-black, 0.6); // Modal/drawer overlays
+
+// Border Colors
+$color-border: $color-gray-200; // Default borders and dividers
+$color-border-subtle: $color-gray-100; // Subtle dividers
+$color-border-strong: $color-gray-300; // Emphasized borders
+$color-border-interactive: $color-primary; // Interactive element borders
+
+// Text Colors
+$color-text-primary: $color-gray-900; // Primary text content
+$color-text-secondary: $color-gray-700; // Secondary text content
+$color-text-tertiary: $color-gray-500; // Tertiary text, placeholders
+$color-text-disabled: $color-gray-400; // Disabled text
+$color-text-inverse: $color-white; // Text on dark backgrounds
+$color-text-link: $color-primary; // Link text
+
+// Interactive State Colors
+$color-interactive-default: $color-primary; // Default interactive elements
+$color-interactive-hover: $color-primary-variant; // Hover states
+$color-interactive-disabled: $color-gray-400; // Disabled interactive elements
+
+// Status Colors (keeping original names for consistency)
+$color-on-primary: $color-white; // Text/icons on primary background
+$color-on-surface: $color-gray-900; // Text/icons on surface
+$color-on-background: $color-gray-800; // Text/icons on app background
+$color-disabled: $color-gray-400; // Disabled text or icons
+
+// --- Border Semantics ---
+$border-width-default: $border-width-thin; // Standard component borders
+$border-width-outlined: $border-width-medium; // Outlined button/input style
+$border-width-focus: $border-width-thick; // Focus rings and indicators
+$border-width-divider: $border-width-thin; // Content dividers
+$border-width-emphasis: $border-width-thick; // Error states, important borders
+
+// --- Border Radius Semantics ---
+$radius-button: $radius-md; // Button border radius
+$radius-input: $radius-sm; // Form input border radius
+$radius-card: $radius-lg; // Card container border radius
+$radius-modal: $radius-lg; // Modal dialog border radius
+$radius-badge: $radius-full; // Badge/pill components
+$radius-avatar: $radius-full; // Avatar/profile images
+
+// --- Shadow Semantics ---
+$shadow-card: $shadow-sm; // Card elevation
+$shadow-dropdown: $shadow-md; // Dropdown/popover elevation
+$shadow-modal: $shadow-lg; // Modal/dialog elevation
+$shadow-focus: 0 0 0 3px rgba($color-primary, 0.2); // Focus ring shadow
+
+// --- Layout Semantics ---
+$z-content: $z-base; // Main content layer
+$z-header: 100; // Fixed headers
+$z-sidebar: 200; // Navigation sidebars
+$z-dropdown: $z-dropdown; // Dropdowns and popovers
+$z-modal: $z-modal; // Modal dialogs
+$z-toast: $z-toast; // Toast notifications
