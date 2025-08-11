@@ -3,6 +3,7 @@
 
 .button {
   // Typography semantics
+  font-family: inherit;
   font-weight: t.$font-weight-emphasis;
   font-size: t.$font-size-label;
   line-height: t.$line-height-compact;
