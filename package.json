@@ -23,7 +23,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "version-patch": "npm version patch",
-    "release": "npm run build && npm run version-patch && npm run publish"
+    "release": "npm run build && npm run version-patch && npm run publish",
+    "test-storybook": "vitest --project=storybook"
   },
   "dependencies": {
     "react": "^19.1.0",
