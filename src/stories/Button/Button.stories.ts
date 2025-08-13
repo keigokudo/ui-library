@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { fn } from "storybook/test";
+import { fn, expect, within, userEvent } from "storybook/test";
 
 import Button from "./Button";
 
@@ -34,6 +34,13 @@ export const Contained: Story = {
     variant: "contained",
     children: "Contained Button",
   },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /contained button/i });
+    await expect(button).toHaveTextContent("Contained Button");
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalled();
+  },
 };
 
 export const Outlined: Story = {
@@ -41,12 +48,26 @@ export const Outlined: Story = {
     variant: "outlined",
     children: "Outlined Button",
   },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /outlined button/i });
+    await expect(button).toHaveTextContent("Outlined Button");
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalled();
+  },
 };
 
 export const Text: Story = {
   args: {
     variant: "text",
     children: "Text Button",
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: /text button/i });
+    await expect(button).toHaveTextContent("Text Button");
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalled();
   },
 };
 
