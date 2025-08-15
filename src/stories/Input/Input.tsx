@@ -8,7 +8,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string;
   helperText?: string;
   variant?: "text" | "number" | "email";
-  fullWidth?: boolean;
+  isFullWidth?: boolean;
   id?: string;
 };
 
@@ -16,15 +16,23 @@ export default function Input(
   props: InputProps,
   ref: ForwardedRef<HTMLInputElement> = null
 ) {
-  const { label, error, helperText, variant, fullWidth, id, ...inputProps } =
-    props;
+  const {
+    label,
+    error,
+    helperText,
+    variant,
+    isFullWidth = false,
+    id,
+    ...inputProps
+  } = props;
 
   const inputId = id || `input-${useId()}`;
 
-  const containerClasses = clsx(
-    styles.container,
-    fullWidth && styles.fullWidth
-  );
+  const containerClasses = clsx(styles.container, {
+    [styles.fullWidth]: isFullWidth,
+  });
+
+  console.log("containerClasses", containerClasses);
 
   return (
     <div className={containerClasses}>
