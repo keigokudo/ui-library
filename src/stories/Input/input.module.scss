@@ -4,11 +4,18 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: t.$space-xs;
 }
 
 .fullWidth {
   width: 100%;
-  background-color: blueviolet;
+}
+
+.label {
+  font-size: t.$font-size-label;
+  font-weight: t.$font-weight-emphasis;
+  color: t.$color-text-primary;
+  line-height: t.$line-height-compact;
 }
 
 .input {
