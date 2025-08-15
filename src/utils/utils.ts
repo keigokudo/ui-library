@@ -26,14 +26,14 @@ export function clsx(...classes: ClassValue[]): string {
 
 function processClassValue(cls: ClassValue): ClassValue {
   if (isPlainObject(cls)) {
-    return Object.entries(cls as Record<string, any>)
+    return Object.entries(cls)
       .filter(([_, value]) => Boolean(value)) // Filters out entries with falsy values
       .map(([key]) => key);
   }
   return cls;
 }
 
-function isPlainObject(value: ClassValue) {
+function isPlainObject(value: ClassValue): value is Record<string, any> {
   const isObject = typeof value === "object";
   const isNotNull = value != null;
   const isNotArray = !Array.isArray(value);
