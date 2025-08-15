@@ -1,6 +1,7 @@
 import { useId } from "react";
 import type { InputHTMLAttributes, ForwardedRef } from "react";
 import styles from "./input.module.scss";
+import { clsx } from "../../utils/utils";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
@@ -20,8 +21,13 @@ export default function Input(
 
   const inputId = id || `input-${useId()}`;
 
+  const containerClasses = clsx(
+    styles.container,
+    fullWidth && styles.fullWidth
+  );
+
   return (
-    <div className={styles.className}>
+    <div className={containerClasses}>
       {label && (
         <label className={styles.label} htmlFor={inputId}>
           {label}

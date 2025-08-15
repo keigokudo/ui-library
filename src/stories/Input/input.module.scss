@@ -1,0 +1,17 @@
+@use "../../styles/variables" as t;
+@use "../../styles/mixins/mixins" as mixins;
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.input {
+  background-color: tomato;
+  height: 300px;
+  width: 400px;
+}
