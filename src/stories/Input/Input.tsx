@@ -32,8 +32,6 @@ export default function Input(
     [styles.fullWidth]: isFullWidth,
   });
 
-  console.log("containerClasses", containerClasses);
-
   return (
     <div className={containerClasses}>
       {label && (
