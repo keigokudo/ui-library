@@ -72,20 +72,59 @@ input {
 /* ==========================================================================
    Size Variants - Using Design Token Values
    ========================================================================== */
+
+.small {
+  input {
+    font-size: t.$font-xs;
+    // It might not be the best to use calc but it is used to ensure proper padding
+    padding: calc(#{t.$space-sm} + #{t.$space-xs}) t.$space-component-padding-sm;
+  }
+
+  .label {
+    font-size: t.$font-xs;
+    left: t.$space-component-padding-sm;
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    transform: translateY(calc(-#{t.$space-lg} - #{t.$space-xs})) scale(0.75);
+    transform-origin: top left;
+  }
+}
+
 .medium {
   input {
-    font-size: t.$font-size-label;
+    font-size: t.$font-md;
     padding: t.$space-component-padding-md t.$space-component-padding-sm;
   }
 
   .label {
-    font-size: t.$font-size-label;
+    font-size: t.$font-md;
     left: t.$space-component-padding-sm;
   }
 
   &.hasValue .label,
   &.focused .label {
     transform: translateY(calc(-#{t.$space-xl} - #{t.$space-xs})) scale(0.75);
+    transform-origin: top left;
+  }
+}
+
+.large {
+  input {
+    font-size: t.$font-lg;
+    padding: calc(#{t.$space-component-padding-md} + #{t.$space-xs})
+      t.$space-component-padding-sm;
+  }
+
+  .label {
+    font-size: t.$font-lg;
+    left: t.$space-component-padding-sm;
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    transform: translateY(calc(-#{t.$space-xl} - #{t.$space-sm})) scale(0.75);
     transform-origin: top left;
   }
 }
