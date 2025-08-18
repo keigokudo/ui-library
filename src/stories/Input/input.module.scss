@@ -35,7 +35,7 @@ input {
   background: transparent;
   font-family: inherit;
   font-weight: t.$font-weight-light;
-  color: t.$color-gray-300;
+  color: t.$color-gray-800;
   z-index: 1;
   transition: color 0.2s ease;
 
@@ -58,7 +58,7 @@ input {
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
-  color: t.$color-text-secondary;
+  color: t.$color-text-tertiary;
   font-weight: t.$font-weight-normal;
   pointer-events: none;
   transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
@@ -70,7 +70,7 @@ input {
 }
 
 /* ==========================================================================
-   Size Variants - Using Design Token Values
+   Size Variants
    ========================================================================== */
 
 .small {
@@ -160,5 +160,48 @@ input {
     margin-left: calc(
       #{t.$space-xs} * -1
     ); // Offset the padding to align with input text
+  }
+}
+
+/* ==========================================================================
+   Filled Variant
+   ========================================================================== */
+
+.filled {
+  .inputWrapper {
+    background-color: t.$color-surface-variant;
+    border-radius: t.$radius-input t.$radius-input 0 0;
+    border-bottom: t.$border-width-default solid t.$color-border;
+    transition: background-color 2s ease, border-bottom-color 2s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: t.$border-width-focus;
+    background-color: t.$color-interactive-default;
+    transform: scaleX(0); // hide the underline
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  &:hover .inputWrapper {
+    background-color: t.$color-background;
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    color: t.$color-primary;
+    padding-inline: t.$space-xs;
+    margin-left: calc(
+      #{t.$space-xs} * -1
+    ); // Offset the padding to align with input text
+  }
+
+  // this is not working yet
+  &.focused ::after {
+    transform: scaleX(1); // Show the underline on focus
   }
 }
