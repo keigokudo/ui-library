@@ -30,7 +30,8 @@ export default function Input(
     ...inputProps
   } = props;
 
-  const inputId = id || `input-${useId()}`;
+  const uniaueId: string = useId();
+  const inputId = id || `input-${uniaueId}`;
 
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(
