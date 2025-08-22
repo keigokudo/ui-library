@@ -161,6 +161,13 @@ input {
       #{t.$space-xs} * -1
     ); // Offset the padding to align with input text
   }
+
+  &.error {
+    &.hasValue .label,
+    &.focused .label {
+      color: t.$color-error;
+    }
+  }
 }
 
 /* ==========================================================================
@@ -200,6 +207,13 @@ input {
     ); // Offset the padding to align with input text
   }
 
+  &.error {
+    &.hasValue .label,
+    &.focused .label {
+      color: t.$color-error;
+    }
+  }
+
   // this is not working yet
   &.focused ::after {
     transform: scaleX(1); // Show the underline on focus
@@ -220,10 +234,17 @@ input {
   &.focused .label {
     color: t.$color-primary;
   }
+
+  &.error {
+    &.hasValue .label,
+    &.focused .label {
+      color: t.$color-error;
+    }
+  }
 }
 
 /* ==========================================================================
-   Helper Text Styles
+   Helper Text Styles and error State
    ========================================================================== */
 .container {
   .helperText {
@@ -232,6 +253,10 @@ input {
     padding-left: t.$space-component-padding-sm;
     line-height: t.$line-height-compact;
     margin-top: t.$space-xs;
+  }
+
+  &.error .helperText {
+    color: t.$color-error;
   }
 
   &.small .helperText {

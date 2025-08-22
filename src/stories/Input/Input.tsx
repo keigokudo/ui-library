@@ -59,6 +59,7 @@ export default function Input(
       [styles.fullWidth]: isFullWidth,
       [styles.focused]: isFocused,
       [styles.hasValue]: hasValue || isFocused,
+      [styles.error]: !!error,
     }
   );
 
@@ -82,8 +83,10 @@ export default function Input(
         {variant === "outlined" && <fieldset className={styles.outline} />}
       </div>
 
-      {/* Helper text or error message */}
-      {helperText && <div className={styles.helperText}>{helperText}</div>}
+      {/* Helper text or error message. Error message is prioritized.  */}
+      {(helperText || error) && (
+        <div className={styles.helperText}>{error || helperText}</div>
+      )}
     </div>
   );
 }
