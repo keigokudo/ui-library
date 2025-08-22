@@ -205,3 +205,19 @@ input {
     transform: scaleX(1); // Show the underline on focus
   }
 }
+
+/* ==========================================================================
+   Filled Variant
+   ========================================================================== */
+.standard {
+  .inputWrapper {
+    border-bottom: t.$border-width-default solid t.$color-border;
+    padding-bottom: t.$border-width-default;
+    transition: border-bottom-color 0.2s ease;
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    color: t.$color-primary;
+  }
+}
