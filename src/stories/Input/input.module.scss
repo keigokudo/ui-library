@@ -221,3 +221,28 @@ input {
     color: t.$color-primary;
   }
 }
+
+/* ==========================================================================
+   Helper Text Styles
+   ========================================================================== */
+.container {
+  .helperText {
+    font-weight: t.$font-weight-normal;
+    color: t.$color-gray-300;
+    padding-left: t.$space-component-padding-sm;
+    line-height: t.$line-height-compact;
+    margin-top: t.$space-xs;
+  }
+
+  &.small .helperText {
+    font-size: t.$font-xs;
+  }
+
+  &.medium .helperText {
+    font-size: t.$font-sm;
+  }
+
+  &.large .helperText {
+    font-size: t.$font-md;
+  }
+}

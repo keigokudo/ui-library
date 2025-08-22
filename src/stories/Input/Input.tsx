@@ -81,6 +81,9 @@ export default function Input(
         {/* Outline for outlined variant */}
         {variant === "outlined" && <fieldset className={styles.outline} />}
       </div>
+
+      {/* Helper text or error message */}
+      {helperText && <div className={styles.helperText}>{helperText}</div>}
     </div>
   );
 }
