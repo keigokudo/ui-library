@@ -15,7 +15,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 
 export default function Input(
   props: InputProps,
-  ref: ForwardedRef<HTMLInputElement> = null
+  ref: ForwardedRef<HTMLInputElement> = null // pass directly this since forwardRef is deprecated in React 19
 ) {
   const {
     label,
