@@ -1,4 +1,4 @@
-import { useState, useId } from "react";
+import { useState, useId, useEffect } from "react";
 import type { InputHTMLAttributes, ForwardedRef, FocusEvent } from "react";
 import styles from "./input.module.scss";
 import { clsx } from "../../utils/utils";
@@ -35,8 +35,16 @@ export default function Input(
 
   const [isFocused, setIsFocused] = useState(false);
   const [hasValue, setHasValue] = useState(
-    !!inputProps.value || !!inputProps.defaultValue
+    !!(inputProps.value || inputProps.defaultValue)
   );
+
+  // To trigger rerender when the value is passed from outside
+  useEffect(() => {
+    const isControlledComponent = inputProps.value !== undefined;
+    if (isControlledComponent) {
+      setHasValue(!!inputProps.value);
+    }
+  }, [inputProps.value]);
 
   const handleFocus = (e: FocusEvent<HTMLInputElement>) => {
     setIsFocused(true);
