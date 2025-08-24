@@ -179,7 +179,7 @@ input {
     background-color: t.$color-surface-variant;
     border-radius: t.$radius-input t.$radius-input 0 0;
     border-bottom: t.$border-width-default solid t.$color-border;
-    transition: background-color 2s ease, border-bottom-color 2s ease;
+    transition: background-color 0.2s ease, border-bottom-color 2s ease;
   }
 
   &::after {
@@ -214,8 +214,7 @@ input {
     }
   }
 
-  // this is not working yet
-  &.focused ::after {
+  &.focused::after {
     transform: scaleX(1); // Show the underline on focus
   }
 }
@@ -230,9 +229,25 @@ input {
     transition: border-bottom-color 0.2s ease;
   }
 
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: t.$border-width-focus;
+    background-color: t.$color-interactive-default;
+    transform: scaleX(0); // hide the underline
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1);
+  }
+
   &.hasValue .label,
   &.focused .label {
     color: t.$color-primary;
+  }
+
+  &.focused::after {
+    transform: scaleX(1); // Show the underline on focus
   }
 
   &.error {
