@@ -82,6 +82,10 @@ export default function Input(
         <input
           ref={ref}
           id={inputId}
+          aria-describedby={
+            error || helperText ? `${inputId}-helper-text` : undefined
+          } // Let screen readers read the helper text or error message
+          aria-invalid={!!error} // Indicate if the input is in an error state
           onFocus={handleFocus}
           onBlur={handleBlur}
           {...inputProps}
@@ -93,7 +97,9 @@ export default function Input(
 
       {/* Helper text or error message. Error message is prioritized.  */}
       {(helperText || error) && (
-        <div className={styles.helperText}>{error || helperText}</div>
+        <div className={styles.helperText} id={`${inputId}-helper-text`}>
+          {error || helperText}
+        </div>
       )}
     </div>
   );
