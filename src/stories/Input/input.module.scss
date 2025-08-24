@@ -1,0 +1,298 @@
+@use "../../styles/variables" as t;
+@use "../../styles/mixins/mixins" as mixins;
+
+/* ==========================================================================
+   Base Container
+   ========================================================================== */
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: t.$space-xs;
+  margin: t.$space-sm 0;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Input Wrapper - Handles Visual Container
+   ========================================================================== */
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Base Input Styles
+   ========================================================================== */
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: t.$font-weight-light;
+  color: t.$color-gray-800;
+  z-index: 1;
+  transition: color 0.2s ease;
+
+  &::placeholder {
+    color: transparent; // Hidden by default when label is present
+    transition: color 0.2s ease;
+  }
+
+  &:disabled {
+    color: t.$color-text-disabled;
+    cursor: not-allowed;
+  }
+}
+
+/* ==========================================================================
+   Base Label Styles
+   ========================================================================== */
+.label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: t.$color-text-tertiary;
+  font-weight: t.$font-weight-normal;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  z-index: 2;
+  white-space: nowrap;
+  max-width: calc(100% - #{t.$space-sm});
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   Size Variants
+   ========================================================================== */
+
+.small {
+  input {
+    font-size: t.$font-xs;
+    // It might not be the best to use calc but it is used to ensure proper padding
+    padding: calc(#{t.$space-sm} + #{t.$space-xs}) t.$space-component-padding-sm;
+  }
+
+  .label {
+    font-size: t.$font-xs;
+    left: t.$space-component-padding-sm;
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    transform: translateY(calc(-#{t.$space-lg} - #{t.$space-xs})) scale(0.75);
+    transform-origin: top left;
+  }
+}
+
+.medium {
+  input {
+    font-size: t.$font-md;
+    padding: t.$space-component-padding-md t.$space-component-padding-sm;
+  }
+
+  .label {
+    font-size: t.$font-md;
+    left: t.$space-component-padding-sm;
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    transform: translateY(calc(-#{t.$space-xl} - #{t.$space-xs})) scale(0.75);
+    transform-origin: top left;
+  }
+}
+
+.large {
+  input {
+    font-size: t.$font-lg;
+    padding: calc(#{t.$space-component-padding-md} + #{t.$space-xs})
+      t.$space-component-padding-sm;
+  }
+
+  .label {
+    font-size: t.$font-lg;
+    left: t.$space-component-padding-sm;
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    transform: translateY(calc(-#{t.$space-xl} - #{t.$space-sm})) scale(0.75);
+    transform-origin: top left;
+  }
+}
+
+/* ==========================================================================
+   Outlined Variant
+   ========================================================================== */
+.outlined {
+  .inputWrapper {
+    border-radius: t.$radius-input;
+  }
+
+  .outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border: t.$border-width-default solid t.$color-border;
+    border-radius: t.$radius-input;
+    pointer-events: none;
+    transition: border-color 0.2s ease, border-width 0.2s ease;
+  }
+
+  // Floating label gets background for outlined variant
+  &.hasValue .label,
+  &.focused .label {
+    color: t.$color-primary;
+    background: t.$color-surface;
+    padding-inline: t.$space-xs;
+    margin-left: calc(
+      #{t.$space-xs} * -1
+    ); // Offset the padding to align with input text
+  }
+
+  &.focused .outline {
+    border-color: t.$color-primary;
+    border-width: t.$border-width-focus;
+  }
+
+  &.error {
+    &.hasValue .label,
+    &.focused .label {
+      color: t.$color-error;
+    }
+
+    &.focused .outline {
+      border-color: t.$color-error;
+      border-width: t.$border-width-focus;
+    }
+  }
+}
+
+/* ==========================================================================
+   Filled Variant
+   ========================================================================== */
+
+.filled {
+  .inputWrapper {
+    background-color: t.$color-surface-variant;
+    border-radius: t.$radius-input t.$radius-input 0 0;
+    border-bottom: t.$border-width-default solid t.$color-border;
+    transition: background-color 0.2s ease, border-bottom-color 2s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: t.$border-width-focus;
+    background-color: t.$color-interactive-default;
+    transform: scaleX(0); // hide the underline
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  &:hover .inputWrapper {
+    background-color: t.$color-background;
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    color: t.$color-primary;
+    padding-inline: t.$space-xs;
+    margin-left: calc(
+      #{t.$space-xs} * -1
+    ); // Offset the padding to align with input text
+  }
+
+  &.error {
+    &.hasValue .label,
+    &.focused .label {
+      color: t.$color-error;
+    }
+  }
+
+  &.focused::after {
+    transform: scaleX(1); // Show the underline on focus
+  }
+}
+
+/* ==========================================================================
+   Filled Variant
+   ========================================================================== */
+.standard {
+  .inputWrapper {
+    border-bottom: t.$border-width-default solid t.$color-border;
+    padding-bottom: t.$border-width-default;
+    transition: border-bottom-color 0.2s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: t.$border-width-focus;
+    background-color: t.$color-interactive-default;
+    transform: scaleX(0); // hide the underline
+    transition: transform 0.2s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  &.hasValue .label,
+  &.focused .label {
+    color: t.$color-primary;
+  }
+
+  &.focused::after {
+    transform: scaleX(1); // Show the underline on focus
+  }
+
+  &.error {
+    &.hasValue .label,
+    &.focused .label {
+      color: t.$color-error;
+    }
+  }
+}
+
+/* ==========================================================================
+   Helper Text Styles and error State
+   ========================================================================== */
+.container {
+  .helperText {
+    font-weight: t.$font-weight-normal;
+    color: t.$color-gray-300;
+    padding-left: t.$space-component-padding-sm;
+    line-height: t.$line-height-compact;
+    margin-top: t.$space-xs;
+  }
+
+  &.error .helperText {
+    color: t.$color-error;
+  }
+
+  &.small .helperText {
+    font-size: t.$font-xs;
+  }
+
+  &.medium .helperText {
+    font-size: t.$font-sm;
+  }
+
+  &.large .helperText {
+    font-size: t.$font-md;
+  }
+}

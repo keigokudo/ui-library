@@ -1,0 +1,106 @@
+import { useState, useId, useEffect } from "react";
+import type { InputHTMLAttributes, ForwardedRef, FocusEvent } from "react";
+import styles from "./input.module.scss";
+import { clsx } from "../../utils/utils";
+
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  label?: string;
+  error?: string;
+  helperText?: string;
+  variant?: "outlined" | "filled" | "standard";
+  inputSize?: "small" | "medium" | "large";
+  isFullWidth?: boolean;
+  id?: string;
+};
+
+export default function Input(
+  props: InputProps,
+  ref: ForwardedRef<HTMLInputElement> = null // pass directly this since forwardRef is deprecated in React 19
+) {
+  const {
+    label,
+    error,
+    helperText,
+    variant = "outlined",
+    inputSize = "medium",
+    isFullWidth = false,
+    id,
+    onFocus,
+    onBlur,
+    ...inputProps
+  } = props;
+
+  const uniquId: string = useId();
+  const inputId = id || `input-${uniquId}`;
+
+  const [isFocused, setIsFocused] = useState(false);
+  const [hasValue, setHasValue] = useState(
+    !!(inputProps.value || inputProps.defaultValue)
+  );
+
+  // To trigger rerender when the value is passed from outside
+  useEffect(() => {
+    const isControlledComponent = inputProps.value !== undefined;
+    if (isControlledComponent) {
+      setHasValue(!!inputProps.value);
+    }
+  }, [inputProps.value]);
+
+  const handleFocus = (e: FocusEvent<HTMLInputElement>) => {
+    setIsFocused(true);
+    // Calls the optional onFocus callback provided by the parent component
+    onFocus?.(e);
+  };
+
+  const handleBlur = (e: FocusEvent<HTMLInputElement>) => {
+    setIsFocused(false);
+    setHasValue(!!e.target.value);
+    // Calls the optional onBlur callback provided by the parent component
+    onBlur?.(e);
+  };
+
+  const containerClasses = clsx(
+    styles.container,
+    styles[variant],
+    styles[inputSize],
+    {
+      [styles.fullWidth]: isFullWidth,
+      [styles.focused]: isFocused,
+      [styles.hasValue]: hasValue || isFocused,
+      [styles.error]: !!error,
+    }
+  );
+
+  return (
+    <div className={containerClasses}>
+      <div className={styles.inputWrapper}>
+        {label && (
+          <label className={styles.label} htmlFor={inputId}>
+            {label}
+          </label>
+        )}
+        <input
+          ref={ref}
+          id={inputId}
+          aria-describedby={
+            error || helperText ? `${inputId}-helper-text` : undefined
+          } // Let screen readers read the helper text or error message
+          aria-invalid={!!error} // Indicate if the input is in an error state
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          {...inputProps}
+        />
+
+        {/* Outline for outlined variant */}
+        {variant === "outlined" && <fieldset className={styles.outline} />}
+      </div>
+
+      {/* Helper text or error message. Error message is prioritized.  */}
+      {(helperText || error) && (
+        <div className={styles.helperText} id={`${inputId}-helper-text`}>
+          {error || helperText}
+        </div>
+      )}
+    </div>
+  );
+}
