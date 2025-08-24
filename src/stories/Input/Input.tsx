@@ -8,7 +8,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   error?: string;
   helperText?: string;
   variant?: "outlined" | "filled" | "standard";
-  size?: "small" | "medium" | "large";
+  inputSize?: "small" | "medium" | "large";
   isFullWidth?: boolean;
   id?: string;
 };
@@ -22,7 +22,7 @@ export default function Input(
     error,
     helperText,
     variant = "outlined",
-    size = "medium",
+    inputSize = "medium",
     isFullWidth = false,
     id,
     onFocus,
@@ -54,7 +54,7 @@ export default function Input(
   const containerClasses = clsx(
     styles.container,
     styles[variant],
-    styles[size],
+    styles[inputSize],
     {
       [styles.fullWidth]: isFullWidth,
       [styles.focused]: isFocused,

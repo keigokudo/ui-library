@@ -16,7 +16,7 @@ const meta = {
       description: "Input style variant",
       defaultValue: "outlined",
     },
-    size: {
+    inputSize: {
       control: { type: "radio" },
       options: ["small", "medium", "large"],
       description: "Input size",
@@ -115,7 +115,7 @@ export const Standard: Story = {
 // Size variants
 export const SmallSize: Story = {
   args: {
-    size: "small",
+    inputSize: "small",
     label: "Small Input",
     placeholder: "Small size input",
   },
@@ -123,7 +123,7 @@ export const SmallSize: Story = {
 
 export const MediumSize: Story = {
   args: {
-    size: "medium",
+    inputSize: "medium",
     label: "Medium Input",
     placeholder: "Medium size input",
   },
@@ -131,7 +131,7 @@ export const MediumSize: Story = {
 
 export const LargeSize: Story = {
   args: {
-    size: "large",
+    inputSize: "large",
     label: "Large Input",
     placeholder: "Large size input",
   },
@@ -236,7 +236,7 @@ export const WithDefaultValue: Story = {
 export const ComplexExample: Story = {
   args: {
     variant: "outlined",
-    size: "large",
+    inputSize: "large",
     label: "Company Email",
     type: "email",
     placeholder: "john.doe@company.com",
