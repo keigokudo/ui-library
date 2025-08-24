@@ -162,10 +162,20 @@ input {
     ); // Offset the padding to align with input text
   }
 
+  &.focused .outline {
+    border-color: t.$color-primary;
+    border-width: t.$border-width-focus;
+  }
+
   &.error {
     &.hasValue .label,
     &.focused .label {
       color: t.$color-error;
+    }
+
+    &.focused .outline {
+      border-color: t.$color-error;
+      border-width: t.$border-width-focus;
     }
   }
 }
