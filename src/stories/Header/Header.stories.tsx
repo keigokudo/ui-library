@@ -8,6 +8,7 @@ const meta: Meta<typeof Header> = {
   parameters: {
     layout: "fullscreen",
   },
+  argTypes: { logo: { control: false } }, // autodocs does not handle React.ReactNode well
   tags: ["autodocs"],
 };
 
