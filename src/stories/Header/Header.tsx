@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./header.module.scss";
 import { clsx } from "../../utils/utils";
 
@@ -15,6 +15,19 @@ type HeaderProps = {
 
 export default function Header({ logo, navItems = [] }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Close menu on Escape key press
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
