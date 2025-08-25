@@ -20,6 +20,13 @@ export default function Header({ logo, navItems = [] }: HeaderProps) {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Close menu when a nav item is clicked
+  const handleNavItemClick = () => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -35,6 +42,7 @@ export default function Header({ logo, navItems = [] }: HeaderProps) {
                   <a
                     href={href}
                     className={clsx({ [styles.active]: isActive })}
+                    onClick={handleNavItemClick}
                   >
                     {label}
                   </a>
