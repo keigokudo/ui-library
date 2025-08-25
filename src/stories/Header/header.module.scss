@@ -1,0 +1,134 @@
+@use "../../styles/variables" as t;
+@use "../../styles/mixins/mixins" as mixins;
+
+$hamburger-icon-size: 2px;
+
+.header {
+  background-color: t.$color-surface;
+  border-bottom: t.$border-width-default solid t.$color-border;
+  padding: 0 t.$space-page-margin;
+  position: sticky;
+  top: 0;
+  z-index: t.$z-header;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem; // Fixed height for the header
+  max-width: t.$breakpoint-xl;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: t.$font-size-title;
+  font-weight: t.$font-weight-strong;
+  color: t.$color-text-primary;
+  flex-shrink: 0; // Prevent logo from shrinking
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.nav {
+  display: none; // Hidden on mobile by default
+
+  @include mixins.respond-up(md) {
+    display: block; // Visible on tablets and larger
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: t.$space-lg;
+  }
+
+  a {
+    color: t.$color-text-secondary;
+    font-weight: t.$font-weight-emphasis;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: t.$color-text-primary;
+    }
+  }
+}
+
+.navOpen {
+  display: block;
+  position: absolute;
+  top: 4rem; // Position below the header
+  left: 0;
+  right: 0;
+  background-color: t.$color-surface;
+  border-bottom: t.$border-width-default solid t.$color-border;
+  padding: t.$space-lg;
+  box-shadow: t.$shadow-dropdown;
+
+  ul {
+    flex-direction: column;
+    gap: t.$space-md;
+  }
+}
+
+.menuToggle {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: t.$space-sm;
+  z-index: t.$z-modal; // Ensure it's above other elements
+
+  @include mixins.respond-up(md) {
+    display: none; // Hide on tablets and larger
+  }
+}
+
+.hamburgerIcon {
+  display: block;
+  width: 1.5rem;
+  height: $hamburger-icon-size;
+  background-color: t.$color-text-primary;
+  position: relative;
+  transition: transform 0.3s ease;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $hamburger-icon-size;
+    background-color: t.$color-text-primary;
+    transition: transform 0.3s ease, top 0.3s ease;
+  }
+
+  &::before {
+    top: -6px;
+  }
+
+  &::after {
+    top: 6px;
+  }
+}
+
+// Active state for the hamburger icon (x mark)
+.menuToggle[aria-expanded="true"] .hamburgerIcon {
+  transform: rotate(45deg);
+
+  &::before {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  &::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+}
