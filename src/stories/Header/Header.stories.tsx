@@ -16,7 +16,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const navItems = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "#", isActive: true },
   { label: "About", href: "#" },
   { label: "Contact", href: "#" },
 ];

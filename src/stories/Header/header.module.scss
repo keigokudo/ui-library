@@ -54,8 +54,14 @@ $hamburger-icon-size: 2px;
     text-decoration: none;
     transition: color 0.2s ease;
 
+    &.active {
+      color: t.$color-primary;
+      font-weight: t.$font-weight-strong;
+    }
+
     &:hover {
-      color: t.$color-text-primary;
+      color: t.$color-primary;
+      border-bottom: solid t.$border-width-thin t.$color-primary;
     }
   }
 }

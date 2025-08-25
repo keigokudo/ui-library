@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import styles from "./header.module.scss";
 import { clsx } from "../../utils/utils";
@@ -6,6 +5,7 @@ import { clsx } from "../../utils/utils";
 type NavItem = {
   label: string;
   href: string;
+  isActive?: boolean;
 };
 
 type HeaderProps = {
@@ -29,11 +29,18 @@ export default function Header({ logo, navItems = [] }: HeaderProps) {
           aria-label="Main navigation"
         >
           <ul>
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a href={item.href}>{item.label}</a>
-              </li>
-            ))}
+            {navItems.map(({ label, href, isActive }) => {
+              return (
+                <li key={label}>
+                  <a
+                    href={href}
+                    className={clsx({ [styles.active]: isActive })}
+                  >
+                    {label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <button
