@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./header.module.scss";
 import { clsx } from "../../utils/utils";
+import useEscapeKey from "../../hooks/useEscapeKey";
 
 type NavItem = {
   label: string;
@@ -32,6 +33,13 @@ export default function Header({ logo, navItems = [] }: HeaderProps) {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Close menu on Escape key press
+  useEscapeKey(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  });
 
   // Close menu when a nav item is clicked
   const handleNavItemClick = () => {
