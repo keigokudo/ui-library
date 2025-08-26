@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./header.module.scss";
 import { clsx } from "../../utils/utils";
 import useEscapeKey from "../../hooks/useEscapeKey";
+import useClickOutside from "../../hooks/useClickOutside";
 
 type NavItem = {
   label: string;
@@ -41,6 +42,12 @@ export default function Header({ logo, navItems = [] }: HeaderProps) {
     }
   });
 
+  const headerRef = useClickOutside<HTMLDivElement>(() => {
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  });
+
   // Close menu when a nav item is clicked
   const handleNavItemClick = () => {
     if (isMenuOpen) {
@@ -50,7 +57,7 @@ export default function Header({ logo, navItems = [] }: HeaderProps) {
 
   return (
     <header className={styles.header}>
-      <div className={styles.container}>
+      <div className={styles.container} ref={headerRef}>
         <div className={styles.logo}>{logo}</div>
         <nav
           className={clsx(styles.nav, { [styles.navOpen]: isMenuOpen })}
