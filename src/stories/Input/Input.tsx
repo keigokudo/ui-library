@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useId, useEffect } from "react";
 import type { InputHTMLAttributes, ForwardedRef, FocusEvent } from "react";
 import styles from "./input.module.scss";
