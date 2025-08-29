@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react-vite";
 import "../src/styles/global.scss";
+import { INITIAL_VIEWPORTS } from "storybook/viewport";
 
 const preview: Preview = {
   parameters: {
@@ -8,6 +9,10 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+
+    viewport: {
+      options: INITIAL_VIEWPORTS,
     },
 
     a11y: {
