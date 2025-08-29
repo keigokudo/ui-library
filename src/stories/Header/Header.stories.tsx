@@ -79,5 +79,16 @@ export const WithoutNav: Story = {
     // Test that header is rendered
     const header = canvas.getByRole("banner");
     await expect(header).toBeInTheDocument();
+
+    // Test that logo is rendered
+    const logo = canvas.getByText("Simple Logo");
+    await expect(logo).toBeInTheDocument();
+
+    // Test that navigation exists but is empty
+    const nav = canvas.getByRole("navigation", { name: /main navigation/i });
+    await expect(nav).toBeInTheDocument();
+
+    const navLinks = canvas.queryAllByRole("link");
+    await expect(navLinks).toHaveLength(0);
   },
 };
