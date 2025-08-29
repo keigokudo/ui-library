@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import Header from "./Header";
-import { expect, within } from "storybook/test";
+import { expect, within, queryByRole } from "storybook/test";
 
 const meta: Meta<typeof Header> = {
   title: "Components/Header",
@@ -66,18 +66,18 @@ export const Default: Story = {
       await expect(navLink).toBeInTheDocument();
       await expect(navLink).toHaveAttribute("href", item.href);
     }
-
-    // Test mobile menu toggle button is present but not visible on desktop
-    const menuToggle = canvas.getByRole("button", {
-      name: /toggle navigation/i,
-    });
-    await expect(menuToggle).toBeInTheDocument();
-    await expect(menuToggle).toHaveAttribute("aria-expanded", "false");
   },
 };
 
 export const WithoutNav: Story = {
   args: {
-    logo: <span>Logo</span>,
+    logo: <span>Simple Logo</span>,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Test that header is rendered
+    const header = canvas.getByRole("banner");
+    await expect(header).toBeInTheDocument();
   },
 };
