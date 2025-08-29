@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import Header from "./Header";
-import { expect, within, queryByRole } from "storybook/test";
+import { expect, within, userEvent } from "storybook/test";
 
 const meta: Meta<typeof Header> = {
   title: "Components/Header",
@@ -90,5 +90,37 @@ export const WithoutNav: Story = {
 
     const navLinks = canvas.queryAllByRole("link");
     await expect(navLinks).toHaveLength(0);
+  },
+};
+
+export const MobileMenu: Story = {
+  globals: { viewport: { value: "iphone12", isRotated: false } },
+  args: {
+    logo: <span>Mobile Logo</span>,
+    navItems: navItems,
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // Test initial mobile state - menu should be closed
+    const menuToggle = canvas.getByRole("button", {
+      name: /toggle navigation/i,
+    });
+    await expect(menuToggle).toHaveAttribute("aria-expanded", "false");
+
+    // Test opening mobile menu
+    await userEvent.click(menuToggle);
+    await expect(menuToggle).toHaveAttribute("aria-expanded", "true");
+
+    // Test that navigation items are accessible when menu is open
+    for (const item of navItems) {
+      const navLink = canvas.getByRole("link", { name: item.label });
+      await expect(navLink).toBeInTheDocument();
+    }
+
+    // Test closing mobile menu by clicking toggle again
+    await userEvent.click(menuToggle);
+    await expect(menuToggle).toHaveAttribute("aria-expanded", "false");
   },
 };
