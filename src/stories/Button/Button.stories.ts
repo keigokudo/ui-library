@@ -78,3 +78,22 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
+
+export const AsLink: Story = {
+  args: {
+    variant: "contained",
+    children: "Link Button",
+    href: "#",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    // should render as link
+    const link = canvas.getByRole("button", { name: /link button/i });
+    await expect(link).toHaveTextContent("Link Button");
+
+    // check that it's actually an anchor
+    await expect(link.tagName).toBe("A");
+    await expect(link).toHaveAttribute("href", "#");
+  },
+};
