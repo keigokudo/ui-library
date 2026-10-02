@@ -1,86 +1,37 @@
 # @krnjs/react-ui
 
-A simple and reusable React UI component library.
+React UI package foundation for the Portfolio / C2 design direction.
 
-## Installation
-
-To install the library, you can use npm or yarn:
-
-```bash
-npm install @krnjs/react-ui
-```
-
-or
-
-```bash
-yarn add @krnjs/react-ui
-```
-
-## Usage
-
-Here's how you can use the components in your React application:
-
-```jsx
-import React from "react";
-import { Button, Input } from "@krnjs/react-ui";
-
-const App = () => {
-  return (
-    <div>
-      <Button label="Click me" />
-      <Input />
-    </div>
-  );
-};
-
-export default App;
-```
+The package intentionally exports no components yet. The previous UI
+experiments have been removed so new components can be introduced against a
+clean public API.
 
 ## Development
 
-To get started with developing the library:
-
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/krnjs/react-ui.git
-    ```
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-
-### Running Storybook
-
-To view and develop components in isolation, run Storybook:
-
 ```bash
+npm install
 npm run storybook
 ```
 
-This will start a development server and open Storybook in your browser.
-
-### Building the Library
-
-To build the library for production, run:
+Useful checks:
 
 ```bash
-npm run build-lib
-```
-
-This will create a `dist` folder with the compiled and bundled code.
-
-### Linting
-
-To lint the codebase, run:
-
-```bash
+npm run typecheck
 npm run lint
+npm test
+npm run build
+npm run build-storybook
+npm pack --dry-run
 ```
 
-### Testing
+## Package policy
 
-To run the tests, use the following command:
-
-```bash
-npm run test-storybook
-```
+- The published package is ESM-only and exposes only its root entry point.
+- React and React DOM are peer dependencies and are never bundled. They are
+  also development dependencies for local Storybook and tests.
+- The package currently ships no CSS. Future styles must use an explicit
+  package subpath; importing the JavaScript entry point must not inject global
+  styles.
+- The package currently has no runtime side effects, so it is marked as
+  side-effect free for tree shaking. This metadata must be updated if a future
+  exported CSS file or another intentional side effect is introduced.

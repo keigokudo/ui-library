@@ -1,20 +1,13 @@
 import { defineConfig } from "tsup";
-import { postcssModules, sassPlugin } from "esbuild-sass-plugin";
 
 export default defineConfig({
   entry: ["src/index.ts"],
-  format: ["esm", "cjs"],
+  format: ["esm"],
   dts: true,
   outDir: "dist",
   clean: true,
-  tsconfig: "./tsconfig.app.json", // use the app tsconfig for building
-  esbuildPlugins: [
-    sassPlugin({
-      type: "css",
-      transform: postcssModules({
-        localsConvention: "camelCase",
-        generateScopedName: "[name]__[local]___[hash:base64:5]",
-      }),
-    }),
-  ],
+  sourcemap: true,
+  target: "es2022",
+  tsconfig: "./tsconfig.lib.json",
+  external: ["react", "react-dom", "react/jsx-runtime"],
 });

@@ -1,41 +1,40 @@
 {
   "name": "@krnjs/react-ui",
   "version": "0.0.35",
+  "description": "React UI package for the Portfolio / C2 design direction",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.js"
     }
   },
-  "types": "dist/index.d.ts",
   "scripts": {
-    "dev": "vite",
-    "build-app": "tsc -b && vite build",
-    "build-lib": "tsup",
+    "dev": "storybook dev -p 6006",
+    "build": "tsup",
+    "typecheck": "tsc -b",
     "lint": "eslint .",
-    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "version-patch": "npm version patch",
-    "release": "npm run build-lib && npm run version-patch && npm publish",
-    "test-storybook": "vitest --project=storybook"
+    "test": "vitest --project=storybook --passWithNoTests",
+    "test-storybook": "npm test"
   },
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0",
+    "react-dom": "^18.2.0 || ^19.0.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.0",
     "@eslint/js": "^9.30.1",
     "@storybook/addon-a11y": "^9.1.2",
     "@storybook/addon-docs": "^9.1.1",
-    "@storybook/addon-onboarding": "^9.1.1",
     "@storybook/addon-vitest": "^9.1.2",
     "@storybook/react-vite": "^9.1.1",
     "@types/node": "^24.2.1",
@@ -44,15 +43,14 @@
     "@vitejs/plugin-react": "^4.6.0",
     "@vitest/browser": "^3.2.4",
     "@vitest/coverage-v8": "^3.2.4",
-    "esbuild-sass-plugin": "^3.3.1",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "eslint-plugin-storybook": "^9.1.1",
     "globals": "^16.3.0",
     "playwright": "^1.54.2",
-    "postcss-modules": "^6.0.1",
-    "sass": "^1.90.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "storybook": "^9.1.1",
     "tsup": "^8.5.0",
     "typescript": "~5.8.3",
