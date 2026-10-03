@@ -1,0 +1,162 @@
+.page {
+  min-width: 0;
+  background: var(--portfolio-color-page);
+  color: var(--portfolio-color-text);
+}
+
+.intro {
+  padding-block: var(--portfolio-layout-section-gap-compact);
+}
+
+.introContent,
+.heading {
+  max-width: calc(
+    var(--portfolio-layout-content-max) + var(--portfolio-space-2xl) +
+      var(--portfolio-space-2xl)
+  );
+}
+
+.eyebrow,
+.sectionHeading {
+  margin: 0;
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-meta);
+  font-weight: var(--portfolio-font-weight-medium);
+  letter-spacing: var(--portfolio-letter-spacing-meta);
+  line-height: var(--portfolio-line-height-meta);
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: var(--portfolio-color-text-muted);
+}
+
+.heading {
+  margin: var(--portfolio-space-md) 0 0;
+  font-family: var(--portfolio-font-heading);
+  font-size: var(--portfolio-font-size-display);
+  font-weight: var(--portfolio-font-weight-bold);
+  letter-spacing: var(--portfolio-letter-spacing-heading);
+  line-height: var(--portfolio-line-height-heading);
+}
+
+.summary {
+  max-width: var(--portfolio-layout-content-max);
+  margin: var(--portfolio-space-lg) 0 0;
+  color: var(--portfolio-color-text-muted);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-body);
+  line-height: var(--portfolio-line-height-body);
+}
+
+.experience,
+.editorialSection,
+.closing {
+  padding-bottom: var(--portfolio-layout-section-gap-compact);
+}
+
+.experienceRow {
+  display: grid;
+  gap: var(--portfolio-space-xs);
+  padding-block: var(--portfolio-space-lg);
+  border-bottom: var(--portfolio-border-width) solid
+    var(--portfolio-color-border);
+}
+
+.experienceRow h3,
+.experienceRow p {
+  margin: 0;
+}
+
+.experienceRow h3 {
+  font-family: var(--portfolio-font-heading);
+  font-size: var(--portfolio-font-size-heading);
+  font-weight: var(--portfolio-font-weight-bold);
+  letter-spacing: var(--portfolio-letter-spacing-heading);
+  line-height: var(--portfolio-line-height-heading);
+}
+
+.experienceRow p {
+  color: var(--portfolio-color-text-muted);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-body);
+  line-height: var(--portfolio-line-height-body);
+}
+
+.sectionLayout,
+.closingLayout {
+  display: grid;
+  gap: var(--portfolio-space-lg);
+  padding-top: var(--portfolio-space-md);
+  border-top: var(--portfolio-border-width) solid var(--portfolio-color-border);
+}
+
+.prose,
+.closingContent {
+  max-width: var(--portfolio-layout-content-max);
+}
+
+.prose p,
+.closingContent p {
+  margin: 0;
+  color: var(--portfolio-color-text-muted);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-body);
+  line-height: var(--portfolio-line-height-body);
+}
+
+.prose p + p {
+  margin-top: var(--portfolio-space-sm);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--portfolio-space-xs);
+  margin: var(--portfolio-space-md) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.closingContent a {
+  display: inline-block;
+  margin-top: var(--portfolio-space-md);
+  color: var(--portfolio-color-text);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-meta);
+  font-weight: var(--portfolio-font-weight-medium);
+  letter-spacing: var(--portfolio-letter-spacing-meta);
+  line-height: var(--portfolio-line-height-meta);
+  text-decoration: none;
+}
+
+.closingContent a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: var(--portfolio-border-width);
+  text-underline-offset: var(--portfolio-space-xs);
+}
+
+.closingContent a:focus-visible {
+  border-radius: var(--portfolio-radius-subtle);
+  outline: var(--portfolio-focus-width) solid var(--portfolio-color-focus);
+  outline-offset: var(--portfolio-focus-offset);
+}
+
+@media (min-width: 48rem) {
+  .intro {
+    padding-block: var(--portfolio-layout-section-gap);
+  }
+
+  .experience,
+  .editorialSection,
+  .closing {
+    padding-bottom: var(--portfolio-layout-section-gap);
+  }
+
+  .experienceRow,
+  .sectionLayout,
+  .closingLayout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--portfolio-space-xl);
+  }
+}
