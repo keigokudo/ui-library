@@ -1,0 +1,112 @@
+.page {
+  min-width: 0;
+  background: var(--c2-color-page);
+  color: var(--c2-color-text);
+}
+
+.intro {
+  padding-block: var(--c2-layout-section-gap-compact);
+}
+
+.introContent,
+.heading {
+  max-width: calc(
+    var(--c2-layout-content-max) + var(--c2-space-2xl) +
+      var(--c2-space-2xl)
+  );
+}
+
+.eyebrow,
+.sectionTitle,
+.sectionSummary {
+  margin: 0;
+  font-family: var(--c2-font-body);
+  font-size: var(--c2-font-size-meta);
+  font-weight: var(--c2-font-weight-medium);
+  letter-spacing: var(--c2-letter-spacing-meta);
+  line-height: var(--c2-line-height-meta);
+}
+
+.eyebrow,
+.sectionTitle {
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.sectionSummary {
+  color: var(--c2-color-text-muted);
+}
+
+.heading {
+  margin: var(--c2-space-md) 0 0;
+  font-family: var(--c2-font-heading);
+  font-size: var(--c2-font-size-display);
+  font-weight: var(--c2-font-weight-bold);
+  letter-spacing: var(--c2-letter-spacing-heading);
+  line-height: var(--c2-line-height-heading);
+}
+
+.description {
+  max-width: var(--c2-layout-content-max);
+  margin: var(--c2-space-lg) 0 0;
+  color: var(--c2-color-text-muted);
+  font-family: var(--c2-font-body);
+  font-size: var(--c2-font-size-body);
+  line-height: var(--c2-line-height-body);
+}
+
+.workIndex {
+  padding-bottom: var(--c2-layout-section-gap-compact);
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--c2-space-xs);
+  padding-block: var(--c2-space-md);
+  border-top: var(--c2-border-width) solid var(--c2-color-border);
+}
+
+.howIWork {
+  padding-bottom: var(--c2-layout-section-gap-compact);
+}
+
+.statement {
+  display: grid;
+  gap: var(--c2-space-lg);
+  padding-top: var(--c2-space-md);
+  border-top: var(--c2-border-width) solid var(--c2-color-border);
+}
+
+.statementText {
+  max-width: var(--c2-layout-content-max);
+  margin: 0;
+  font-family: var(--c2-font-heading);
+  font-size: var(--c2-font-size-heading);
+  font-weight: var(--c2-font-weight-bold);
+  letter-spacing: var(--c2-letter-spacing-heading);
+  line-height: var(--c2-line-height-heading);
+}
+
+@media (min-width: 48rem) {
+  .intro {
+    padding-block: var(--c2-layout-section-gap);
+  }
+
+  .workIndex,
+  .howIWork {
+    padding-bottom: var(--c2-layout-section-gap);
+  }
+
+  .sectionHeader {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--c2-space-lg);
+  }
+
+  .statement {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: var(--c2-space-lg);
+  }
+}
