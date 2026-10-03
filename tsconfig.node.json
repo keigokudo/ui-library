@@ -24,6 +24,7 @@
     "vite.config.ts",
     "tsup.config.ts",
     "vitest.shims.d.ts",
+    "src/styles.d.ts",
     ".storybook/*.ts"
   ]
 }

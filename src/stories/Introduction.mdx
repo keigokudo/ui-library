@@ -1,15 +1,84 @@
 import { Meta } from "@storybook/addon-docs/blocks";
+import "./introduction.css";
 
-<Meta title="Introduction" />
+<Meta title="Foundation" />
 
-# Portfolio / C2 UI foundation
+<div className="c2-foundation foundation-docs">
+  <header className="foundation-docs__intro">
+    <div className="foundation-docs__eyebrow">Portfolio / C2</div>
+    <h1 className="foundation-docs__title">Design foundation</h1>
+    <p className="foundation-docs__lead">
+      A restrained editorial baseline for future portfolio UI: warm neutral
+      surfaces, direct typography, generous rhythm, fine borders, and one clear
+      accent. These are primitives, not components.
+    </p>
+  </header>
 
-This Storybook is the visual-development environment for `@krnjs/react-ui`.
+  <section className="foundation-docs__section">
+    <h2>Colour</h2>
+    <div className="foundation-docs__grid">
+      <div className="foundation-docs__swatch" style={{ background: "var(--c2-color-page)" }}>
+        Page <span>#f5f2eb</span>
+      </div>
+      <div className="foundation-docs__swatch" style={{ background: "var(--c2-color-surface)" }}>
+        Surface <span>#ffffff</span>
+      </div>
+      <div className="foundation-docs__swatch" style={{ background: "var(--c2-color-surface-subtle)" }}>
+        Subtle surface <span>#ebe7de</span>
+      </div>
+      <div className="foundation-docs__swatch foundation-docs__swatch--inverse" style={{ background: "var(--c2-color-text)" }}>
+        Primary text <span>#1b1b18</span>
+      </div>
+      <div className="foundation-docs__swatch foundation-docs__swatch--inverse" style={{ background: "var(--c2-color-text-muted)" }}>
+        Muted text <span>#5d5b54</span>
+      </div>
+      <div className="foundation-docs__swatch foundation-docs__swatch--inverse" style={{ background: "var(--c2-color-accent)" }}>
+        Accent <span>#2f55d4</span>
+      </div>
+    </div>
+  </section>
 
-The previous component experiments have been removed. The package intentionally
-has no public UI components while the Portfolio / C2 design direction is being
-established.
+  <section className="foundation-docs__section">
+    <h2>Typography</h2>
+    <div className="foundation-docs__type-sample foundation-docs__display">Selected work</div>
+    <div className="foundation-docs__type-sample foundation-docs__heading">Designing clear digital experiences</div>
+    <p className="foundation-docs__type-sample">
+      Body copy uses a readable 16px base with a relaxed line height. The
+      measure stays intentionally compact for project narratives and case-study
+      content.
+    </p>
+    <div className="foundation-docs__type-sample foundation-docs__meta">Role · Product design · 2026</div>
+  </section>
 
-Future components should be added only when their API and visual direction are
-defined. Component stories, interaction checks, and accessibility checks should
-live alongside each implementation.
+  <section className="foundation-docs__section">
+    <h2>Spacing</h2>
+    <div className="foundation-docs__spacing" aria-label="Spacing scale from 8 to 120 pixels">
+      <div className="foundation-docs__spacing-item" style={{ "--space": "var(--c2-space-xs)" }} title="xs · 8px" />
+      <div className="foundation-docs__spacing-item" style={{ "--space": "var(--c2-space-sm)" }} title="sm · 16px" />
+      <div className="foundation-docs__spacing-item" style={{ "--space": "var(--c2-space-md)" }} title="md · 24px" />
+      <div className="foundation-docs__spacing-item" style={{ "--space": "var(--c2-space-lg)" }} title="lg · 40px" />
+      <div className="foundation-docs__spacing-item" style={{ "--space": "var(--c2-space-xl)" }} title="xl · 64px" />
+      <div className="foundation-docs__spacing-item" style={{ "--space": "var(--c2-space-2xl)" }} title="2xl · 120px" />
+    </div>
+  </section>
+
+  <section className="foundation-docs__section">
+    <h2>Shape and borders</h2>
+    <div className="foundation-docs__grid">
+      <div className="foundation-docs__shape">Subtle · 4px</div>
+      <div className="foundation-docs__shape" style={{ borderRadius: "var(--c2-radius-medium)" }}>Medium · 12px</div>
+      <div className="foundation-docs__shape" style={{ borderRadius: "var(--c2-radius-pill)" }}>Pill</div>
+      <div className="foundation-docs__shape" style={{ borderColor: "var(--c2-color-border-strong)" }}>Strong border</div>
+    </div>
+  </section>
+
+  <section className="foundation-docs__section">
+    <h2>Layout and focus</h2>
+    <div className="foundation-docs__measure">
+      Content measure · 46rem maximum inside a fluid 90rem page with responsive gutters.
+    </div>
+    <a className="foundation-docs__focus" href="#focus-preview" id="focus-preview">
+      Tab to preview the focus ring
+    </a>
+  </section>
+</div>

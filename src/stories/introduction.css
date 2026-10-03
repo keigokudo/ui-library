@@ -1,0 +1,149 @@
+.foundation-docs {
+  max-width: var(--c2-layout-page-max);
+  margin-inline: auto;
+  padding: var(--c2-space-md) var(--c2-layout-gutter) var(--c2-space-xl);
+}
+
+.foundation-docs__intro {
+  max-width: var(--c2-layout-content-max);
+  margin-bottom: var(--c2-layout-section-gap-compact);
+}
+
+.foundation-docs__eyebrow,
+.foundation-docs__label {
+  color: var(--c2-color-text-muted);
+  font-size: var(--c2-font-size-meta);
+  font-weight: var(--c2-font-weight-bold);
+  letter-spacing: var(--c2-letter-spacing-meta);
+  line-height: var(--c2-line-height-meta);
+  text-transform: uppercase;
+}
+
+.foundation-docs__title {
+  margin: var(--c2-space-sm) 0;
+  font-family: var(--c2-font-heading);
+  font-size: var(--c2-font-size-display);
+  font-weight: var(--c2-font-weight-bold);
+  letter-spacing: var(--c2-letter-spacing-heading);
+  line-height: var(--c2-line-height-heading);
+}
+
+.foundation-docs__lead {
+  color: var(--c2-color-text-muted);
+  font-size: 1.125rem;
+  line-height: var(--c2-line-height-body);
+}
+
+.foundation-docs__section {
+  padding-block: var(--c2-layout-section-gap-compact);
+  border-top: var(--c2-border-width) solid var(--c2-color-border);
+}
+
+.foundation-docs__section h2 {
+  margin: 0 0 var(--c2-space-md);
+  font-size: var(--c2-font-size-heading);
+  letter-spacing: var(--c2-letter-spacing-heading);
+  line-height: var(--c2-line-height-heading);
+}
+
+.foundation-docs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--c2-space-sm);
+}
+
+.foundation-docs__swatch {
+  min-height: 8rem;
+  padding: var(--c2-space-sm);
+  border: var(--c2-border-width) solid var(--c2-color-border);
+  border-radius: var(--c2-radius-medium);
+  background: var(--swatch);
+  color: var(--swatch-text, var(--c2-color-text));
+}
+
+.foundation-docs__swatch span {
+  display: block;
+  margin-top: var(--c2-space-xs);
+  color: inherit;
+  font-size: var(--c2-font-size-meta);
+  line-height: var(--c2-line-height-meta);
+}
+
+.foundation-docs__swatch.foundation-docs__swatch--inverse {
+  color: var(--c2-color-accent-contrast);
+}
+
+.foundation-docs__type-sample {
+  max-width: var(--c2-layout-content-max);
+  margin-block: var(--c2-space-md);
+}
+
+.foundation-docs__display {
+  font-size: var(--c2-font-size-display);
+  font-weight: var(--c2-font-weight-bold);
+  letter-spacing: var(--c2-letter-spacing-heading);
+  line-height: var(--c2-line-height-heading);
+}
+
+.foundation-docs__heading {
+  font-size: var(--c2-font-size-heading);
+  font-weight: var(--c2-font-weight-bold);
+  letter-spacing: var(--c2-letter-spacing-heading);
+  line-height: var(--c2-line-height-heading);
+}
+
+.foundation-docs__meta {
+  color: var(--c2-color-text-muted);
+  font-size: var(--c2-font-size-meta);
+  letter-spacing: var(--c2-letter-spacing-meta);
+  line-height: var(--c2-line-height-meta);
+  text-transform: uppercase;
+}
+
+.foundation-docs__spacing {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--c2-space-sm);
+  min-height: 9rem;
+  overflow-x: auto;
+}
+
+.foundation-docs__spacing-item {
+  flex: 0 0 var(--space);
+  height: var(--space);
+  min-width: var(--c2-space-xs);
+  border-radius: var(--c2-radius-subtle);
+  background: var(--c2-color-accent);
+}
+
+.foundation-docs__shape {
+  min-height: 7rem;
+  padding: var(--c2-space-md);
+  border: var(--border, var(--c2-border-width) solid var(--c2-color-border));
+  border-radius: var(--radius, var(--c2-radius-subtle));
+  background: var(--c2-color-surface);
+}
+
+.foundation-docs__measure {
+  width: 100%;
+  max-width: var(--c2-layout-content-max);
+  padding: var(--c2-space-md);
+  border-inline: var(--c2-border-width) solid var(--c2-color-border-strong);
+  background: var(--c2-color-surface-subtle);
+}
+
+.foundation-docs__focus {
+  display: inline-block;
+  margin: var(--c2-space-sm) 0;
+  padding: var(--c2-space-xs) var(--c2-space-sm);
+  border: var(--c2-border-width) solid var(--c2-color-border-strong);
+  border-radius: var(--c2-radius-subtle);
+  color: var(--c2-color-accent);
+  font-weight: var(--c2-font-weight-medium);
+}
+
+@media (min-width: 48rem) {
+  .foundation-docs {
+    padding-block: var(--c2-space-xl) var(--c2-layout-section-gap);
+  }
+}
