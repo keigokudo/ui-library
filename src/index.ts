@@ -6,3 +6,5 @@ export { SiteHeader } from "./components/SiteHeader/SiteHeader";
 export type { SiteHeaderProps } from "./components/SiteHeader/SiteHeader";
 export { SiteFooter } from "./components/SiteFooter/SiteFooter";
 export type { SiteFooterProps } from "./components/SiteFooter/SiteFooter";
+export { ProjectRow } from "./components/ProjectRow/ProjectRow";
+export type { ProjectRowProps } from "./components/ProjectRow/ProjectRow";
