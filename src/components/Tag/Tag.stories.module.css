@@ -1,0 +1,11 @@
+.canvas {
+  min-height: 10rem;
+  padding: var(--c2-space-lg);
+  background: var(--c2-color-page);
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--c2-space-xs);
+}

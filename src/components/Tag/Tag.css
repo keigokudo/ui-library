@@ -1,0 +1,16 @@
+.c2-tag {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  padding: var(--c2-space-xs) var(--c2-space-sm);
+  border: var(--c2-border-width) solid var(--c2-color-border);
+  border-radius: var(--c2-radius-pill);
+  background: var(--c2-color-surface-subtle);
+  color: var(--c2-color-text-muted);
+  font-family: var(--c2-font-body);
+  font-size: var(--c2-font-size-meta);
+  font-weight: var(--c2-font-weight-medium);
+  letter-spacing: var(--c2-letter-spacing-meta);
+  line-height: var(--c2-line-height-meta);
+  white-space: nowrap;
+}
