@@ -1,0 +1,7 @@
+.c2-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--c2-layout-page-max);
+  margin-inline: auto;
+  padding-inline: var(--c2-layout-gutter);
+}

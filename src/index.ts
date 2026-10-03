@@ -1,6 +1,2 @@
-/**
- * Public entry point for @krnjs/react-ui.
- *
- * Portfolio / C2 components will be exported here as they are implemented.
- */
-export {};
+export { Container } from "./components/Container/Container";
+export type { ContainerProps } from "./components/Container/Container";
