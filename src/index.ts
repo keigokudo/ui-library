@@ -10,3 +10,5 @@ export { ProjectRow } from "./components/ProjectRow/ProjectRow";
 export type { ProjectRowProps } from "./components/ProjectRow/ProjectRow";
 export { SectionHeader } from "./components/SectionHeader/SectionHeader";
 export type { SectionHeaderProps } from "./components/SectionHeader/SectionHeader";
+export { PageIntro } from "./components/PageIntro/PageIntro";
+export type { PageIntroProps } from "./components/PageIntro/PageIntro";

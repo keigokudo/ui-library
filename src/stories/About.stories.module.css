@@ -8,15 +8,6 @@
   padding-block: var(--portfolio-layout-section-gap-compact);
 }
 
-.introContent,
-.heading {
-  max-width: calc(
-    var(--portfolio-layout-content-max) + var(--portfolio-space-2xl) +
-      var(--portfolio-space-2xl)
-  );
-}
-
-.eyebrow,
 .sectionHeading {
   margin: 0;
   font-family: var(--portfolio-font-body);
@@ -25,28 +16,6 @@
   letter-spacing: var(--portfolio-letter-spacing-meta);
   line-height: var(--portfolio-line-height-meta);
   text-transform: uppercase;
-}
-
-.eyebrow {
-  color: var(--portfolio-color-text-muted);
-}
-
-.heading {
-  margin: var(--portfolio-space-md) 0 0;
-  font-family: var(--portfolio-font-heading);
-  font-size: var(--portfolio-font-size-display);
-  font-weight: var(--portfolio-font-weight-bold);
-  letter-spacing: var(--portfolio-letter-spacing-heading);
-  line-height: var(--portfolio-line-height-heading);
-}
-
-.summary {
-  max-width: var(--portfolio-layout-content-max);
-  margin: var(--portfolio-space-lg) 0 0;
-  color: var(--portfolio-color-text-muted);
-  font-family: var(--portfolio-font-body);
-  font-size: var(--portfolio-font-size-body);
-  line-height: var(--portfolio-line-height-body);
 }
 
 .experience,

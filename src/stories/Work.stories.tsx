@@ -3,6 +3,7 @@ import { expect, within } from "storybook/test";
 
 import {
   Container,
+  PageIntro,
   ProjectRow,
   SectionHeader,
   SiteFooter,
@@ -44,20 +45,12 @@ const meta = {
       <SiteHeader brand="Portfolio" currentPath="/work" />
 
       <main>
-        <section className={styles.intro}>
-          <Container>
-            <div className={styles.introContent}>
-              <p className={styles.eyebrow}>SELECTED WORK</p>
-              <h1 className={styles.heading}>
-                Selected work, across systems and products.
-              </h1>
-              <p className={styles.description}>
-                A focused set of projects across design systems, search
-                experiences and product engineering.
-              </p>
-            </div>
-          </Container>
-        </section>
+        <PageIntro
+          className={styles.intro}
+          eyebrow="SELECTED WORK"
+          heading="Selected work, across systems and products."
+          description="A focused set of projects across design systems, search experiences and product engineering."
+        />
 
         <section className={styles.workIndex}>
           <Container>

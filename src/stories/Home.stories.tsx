@@ -3,6 +3,7 @@ import { expect, within } from "storybook/test";
 
 import {
   Container,
+  PageIntro,
   ProjectRow,
   SectionHeader,
   SiteFooter,
@@ -20,31 +21,25 @@ const meta = {
       <SiteHeader brand="Portfolio" currentPath="/" />
 
       <main>
-        <section className={styles.hero}>
-          <Container>
-            <div className={styles.heroContent}>
-              <p className={styles.eyebrow}>FULL-STACK SOFTWARE ENGINEER</p>
-              <h1 className={styles.headline}>
-                Thoughtful software, built to last.
-              </h1>
-              <p className={styles.description}>
-                Deep frontend expertise, with practical experience across
-                backend systems, APIs, integrations and cloud platforms.
-              </p>
-              <div className={styles.actions}>
-                <a
-                  className={`${styles.action} ${styles.actionPrimary}`}
-                  href="#selected-work"
-                >
-                  Selected work
-                </a>
-                <a className={styles.action} href="/about">
-                  About me
-                </a>
-              </div>
-            </div>
-          </Container>
-        </section>
+        <PageIntro
+          className={styles.hero}
+          eyebrow="FULL-STACK SOFTWARE ENGINEER"
+          heading="Thoughtful software, built to last."
+          description="Deep frontend expertise, with practical experience across backend systems, APIs, integrations and cloud platforms."
+          actions={
+            <>
+              <a
+                className={`${styles.action} ${styles.actionPrimary}`}
+                href="#selected-work"
+              >
+                Selected work
+              </a>
+              <a className={styles.action} href="/about">
+                About me
+              </a>
+            </>
+          }
+        />
 
         <section id="selected-work" className={styles.selectedWork}>
           <Container>
