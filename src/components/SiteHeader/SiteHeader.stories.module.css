@@ -1,0 +1,4 @@
+.canvas {
+  min-height: 12rem;
+  background: var(--c2-color-page);
+}
