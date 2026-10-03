@@ -4,6 +4,7 @@ import { expect, within } from "storybook/test";
 import {
   Container,
   ProjectRow,
+  SectionHeader,
   SiteFooter,
   SiteHeader,
 } from "../index";
@@ -15,8 +16,8 @@ const meta = {
     layout: "fullscreen",
   },
   render: () => (
-    <div className={`c2-foundation ${styles.page}`}>
-      <SiteHeader currentPath="/" />
+    <div className={`portfolio-foundation ${styles.page}`}>
+      <SiteHeader brand="Portfolio" currentPath="/" />
 
       <main>
         <section className={styles.hero}>
@@ -47,12 +48,10 @@ const meta = {
 
         <section id="selected-work" className={styles.selectedWork}>
           <Container>
-            <header className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Selected work</h2>
-              <p className={styles.sectionSummary}>
-                Systems · Products · Integrations
-              </p>
-            </header>
+            <SectionHeader
+              heading="SELECTED WORK"
+              meta="Systems · Products · Integrations"
+            />
 
             <div>
               <ProjectRow
@@ -126,7 +125,10 @@ export const Desktop: Story = {
     }
 
     await expect(
-      canvas.getByRole("link", { name: "KEIGO KUDO" }),
+      canvas.getByRole("link", { name: "Portfolio" }),
+    ).toBeVisible();
+    await expect(
+      canvas.getByRole("heading", { level: 2, name: "SELECTED WORK" }),
     ).toBeVisible();
     await expect(
       canvas.getByText("Let’s build something that lasts."),

@@ -17,23 +17,23 @@ export const ProjectRow = forwardRef<HTMLAnchorElement, ProjectRowProps>(
     { className, index, category, title, focus, href, ...props },
     ref,
   ) {
-    const classes = ["c2-project-row", className].filter(Boolean).join(" ");
+    const classes = ["portfolio-project-row", className].filter(Boolean).join(" ");
 
     return (
       <a ref={ref} className={classes} href={href} {...props}>
-        <span className="c2-project-row__index">{index}</span>
+        <span className="portfolio-project-row__index">{index}</span>
 
-        <span className="c2-project-row__identity">
-          <span className="c2-project-row__label">{category}</span>
-          <span className="c2-project-row__title">{title}</span>
+        <span className="portfolio-project-row__identity">
+          <span className="portfolio-project-row__label">{category}</span>
+          <span className="portfolio-project-row__title">{title}</span>
         </span>
 
-        <span className="c2-project-row__focus">
-          <span className="c2-project-row__label">Focus</span>
-          <span className="c2-project-row__focus-value">{focus}</span>
+        <span className="portfolio-project-row__focus">
+          <span className="portfolio-project-row__label">Focus</span>
+          <span className="portfolio-project-row__focus-value">{focus}</span>
         </span>
 
-        <span className="c2-project-row__arrow" aria-hidden="true">
+        <span className="portfolio-project-row__arrow" aria-hidden="true">
           ↗
         </span>
       </a>

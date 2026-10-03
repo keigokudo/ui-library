@@ -1,0 +1,7 @@
+.canvas {
+  min-width: 0;
+  min-height: 12rem;
+  padding-inline: var(--portfolio-layout-gutter);
+  background: var(--portfolio-color-page);
+  color: var(--portfolio-color-text);
+}

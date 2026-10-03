@@ -1,9 +1,9 @@
 # @krnjs/react-ui
 
-React UI package foundation for the Portfolio / C2 design direction.
+React UI package for the Portfolio warm editorial design.
 
-The package intentionally exports no components yet. It provides the CSS design
-foundation that future Portfolio / C2 components will consume.
+The package exports the portfolio components and the CSS design foundation they
+consume.
 
 ## Styles
 
@@ -13,8 +13,8 @@ Import the foundation explicitly from the application entry point:
 import "@krnjs/react-ui/styles.css";
 ```
 
-The import registers semantic `--c2-*` custom properties. Add
-`class="c2-foundation"` to an application region to opt into the inherited page
+The import registers semantic `--portfolio-*` custom properties. Add
+`class="portfolio-foundation"` to an application region to opt into the inherited page
 colour, typography, selection, and focus-visible defaults.
 
 The font stack prefers `Inter` when the consumer provides it and otherwise uses

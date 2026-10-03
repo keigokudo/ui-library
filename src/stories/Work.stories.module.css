@@ -1,112 +1,91 @@
 .page {
   min-width: 0;
-  background: var(--c2-color-page);
-  color: var(--c2-color-text);
+  background: var(--portfolio-color-page);
+  color: var(--portfolio-color-text);
 }
 
 .intro {
-  padding-block: var(--c2-layout-section-gap-compact);
+  padding-block: var(--portfolio-layout-section-gap-compact);
 }
 
 .introContent,
 .heading {
   max-width: calc(
-    var(--c2-layout-content-max) + var(--c2-space-2xl) +
-      var(--c2-space-2xl)
+    var(--portfolio-layout-content-max) + var(--portfolio-space-2xl) +
+      var(--portfolio-space-2xl)
   );
 }
 
 .eyebrow,
-.sectionTitle,
-.sectionSummary {
+.statementTitle {
   margin: 0;
-  font-family: var(--c2-font-body);
-  font-size: var(--c2-font-size-meta);
-  font-weight: var(--c2-font-weight-medium);
-  letter-spacing: var(--c2-letter-spacing-meta);
-  line-height: var(--c2-line-height-meta);
-}
-
-.eyebrow,
-.sectionTitle {
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-meta);
+  font-weight: var(--portfolio-font-weight-medium);
+  letter-spacing: var(--portfolio-letter-spacing-meta);
+  line-height: var(--portfolio-line-height-meta);
   text-transform: uppercase;
 }
 
-.eyebrow,
-.sectionSummary {
-  color: var(--c2-color-text-muted);
+.eyebrow {
+  color: var(--portfolio-color-text-muted);
 }
 
 .heading {
-  margin: var(--c2-space-md) 0 0;
-  font-family: var(--c2-font-heading);
-  font-size: var(--c2-font-size-display);
-  font-weight: var(--c2-font-weight-bold);
-  letter-spacing: var(--c2-letter-spacing-heading);
-  line-height: var(--c2-line-height-heading);
+  margin: var(--portfolio-space-md) 0 0;
+  font-family: var(--portfolio-font-heading);
+  font-size: var(--portfolio-font-size-display);
+  font-weight: var(--portfolio-font-weight-bold);
+  letter-spacing: var(--portfolio-letter-spacing-heading);
+  line-height: var(--portfolio-line-height-heading);
 }
 
 .description {
-  max-width: var(--c2-layout-content-max);
-  margin: var(--c2-space-lg) 0 0;
-  color: var(--c2-color-text-muted);
-  font-family: var(--c2-font-body);
-  font-size: var(--c2-font-size-body);
-  line-height: var(--c2-line-height-body);
+  max-width: var(--portfolio-layout-content-max);
+  margin: var(--portfolio-space-lg) 0 0;
+  color: var(--portfolio-color-text-muted);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-body);
+  line-height: var(--portfolio-line-height-body);
 }
 
 .workIndex {
-  padding-bottom: var(--c2-layout-section-gap-compact);
-}
-
-.sectionHeader {
-  display: flex;
-  flex-direction: column;
-  gap: var(--c2-space-xs);
-  padding-block: var(--c2-space-md);
-  border-top: var(--c2-border-width) solid var(--c2-color-border);
+  padding-bottom: var(--portfolio-layout-section-gap-compact);
 }
 
 .howIWork {
-  padding-bottom: var(--c2-layout-section-gap-compact);
+  padding-bottom: var(--portfolio-layout-section-gap-compact);
 }
 
 .statement {
   display: grid;
-  gap: var(--c2-space-lg);
-  padding-top: var(--c2-space-md);
-  border-top: var(--c2-border-width) solid var(--c2-color-border);
+  gap: var(--portfolio-space-lg);
+  padding-top: var(--portfolio-space-md);
+  border-top: var(--portfolio-border-width) solid var(--portfolio-color-border);
 }
 
 .statementText {
-  max-width: var(--c2-layout-content-max);
+  max-width: var(--portfolio-layout-content-max);
   margin: 0;
-  font-family: var(--c2-font-heading);
-  font-size: var(--c2-font-size-heading);
-  font-weight: var(--c2-font-weight-bold);
-  letter-spacing: var(--c2-letter-spacing-heading);
-  line-height: var(--c2-line-height-heading);
+  font-family: var(--portfolio-font-heading);
+  font-size: var(--portfolio-font-size-heading);
+  font-weight: var(--portfolio-font-weight-bold);
+  letter-spacing: var(--portfolio-letter-spacing-heading);
+  line-height: var(--portfolio-line-height-heading);
 }
 
 @media (min-width: 48rem) {
   .intro {
-    padding-block: var(--c2-layout-section-gap);
+    padding-block: var(--portfolio-layout-section-gap);
   }
 
   .workIndex,
   .howIWork {
-    padding-bottom: var(--c2-layout-section-gap);
-  }
-
-  .sectionHeader {
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--c2-space-lg);
+    padding-bottom: var(--portfolio-layout-section-gap);
   }
 
   .statement {
     grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    gap: var(--c2-space-lg);
+    gap: var(--portfolio-space-lg);
   }
 }

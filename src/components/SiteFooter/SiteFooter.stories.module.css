@@ -3,5 +3,5 @@
   min-height: 20rem;
   flex-direction: column;
   justify-content: flex-end;
-  background: var(--c2-color-page);
+  background: var(--portfolio-color-page);
 }

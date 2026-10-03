@@ -8,3 +8,5 @@ export { SiteFooter } from "./components/SiteFooter/SiteFooter";
 export type { SiteFooterProps } from "./components/SiteFooter/SiteFooter";
 export { ProjectRow } from "./components/ProjectRow/ProjectRow";
 export type { ProjectRowProps } from "./components/ProjectRow/ProjectRow";
+export { SectionHeader } from "./components/SectionHeader/SectionHeader";
+export type { SectionHeaderProps } from "./components/SectionHeader/SectionHeader";

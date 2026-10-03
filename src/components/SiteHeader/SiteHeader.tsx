@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import type { ComponentPropsWithoutRef } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 import { Container } from "../Container/Container";
 
@@ -8,29 +8,35 @@ const GITHUB_URL = "https://github.com/keigokudo";
 type InternalPath = "/" | "/work" | "/about";
 
 export type SiteHeaderProps = ComponentPropsWithoutRef<"header"> & {
+  brand: ReactNode;
+  brandAriaLabel?: string;
   currentPath?: string;
 };
 
 export const SiteHeader = forwardRef<HTMLElement, SiteHeaderProps>(
-  function SiteHeader({ className, currentPath, ...props }, ref) {
-    const classes = ["c2-site-header", className].filter(Boolean).join(" ");
+  function SiteHeader(
+    { brand, brandAriaLabel, className, currentPath, ...props },
+    ref,
+  ) {
+    const classes = ["portfolio-site-header", className].filter(Boolean).join(" ");
     const current = (path: InternalPath) =>
       currentPath === path ? "page" : undefined;
 
     return (
       <header ref={ref} className={classes} {...props}>
         <Container>
-          <div className="c2-site-header__row">
+          <div className="portfolio-site-header__row">
             <a
-              className="c2-site-header__brand"
+              className="portfolio-site-header__brand"
               href="/"
+              aria-label={brandAriaLabel}
               aria-current={current("/")}
             >
-              KEIGO KUDO
+              {brand}
             </a>
 
             <nav aria-label="Primary">
-              <ul className="c2-site-header__navigation">
+              <ul className="portfolio-site-header__navigation">
                 <li>
                   <a href="/work" aria-current={current("/work")}>
                     Work

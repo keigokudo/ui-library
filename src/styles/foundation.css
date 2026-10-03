@@ -1,24 +1,24 @@
 /*
- * Optional inherited defaults. Apply `c2-foundation` to an application region
+ * Optional inherited defaults. Apply `portfolio-foundation` to an application region
  * to opt in; importing the stylesheet alone only registers custom properties.
  */
-.c2-foundation {
-  background: var(--c2-color-page);
-  color: var(--c2-color-text);
-  font-family: var(--c2-font-body);
-  font-size: var(--c2-font-size-body);
-  line-height: var(--c2-line-height-body);
+.portfolio-foundation {
+  background: var(--portfolio-color-page);
+  color: var(--portfolio-color-text);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-body);
+  line-height: var(--portfolio-line-height-body);
   text-rendering: optimizeLegibility;
 }
 
-.c2-foundation::selection,
-.c2-foundation ::selection {
-  background: var(--c2-color-selection);
-  color: var(--c2-color-text);
+.portfolio-foundation::selection,
+.portfolio-foundation ::selection {
+  background: var(--portfolio-color-selection);
+  color: var(--portfolio-color-text);
 }
 
-.c2-foundation:focus-visible,
-.c2-foundation :focus-visible {
-  outline: var(--c2-focus-width) solid var(--c2-color-focus);
-  outline-offset: var(--c2-focus-offset);
+.portfolio-foundation:focus-visible,
+.portfolio-foundation :focus-visible {
+  outline: var(--portfolio-focus-width) solid var(--portfolio-color-focus);
+  outline-offset: var(--portfolio-focus-offset);
 }

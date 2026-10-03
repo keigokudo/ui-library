@@ -4,6 +4,7 @@ import { expect, within } from "storybook/test";
 import {
   Container,
   ProjectRow,
+  SectionHeader,
   SiteFooter,
   SiteHeader,
 } from "../index";
@@ -39,8 +40,8 @@ const meta = {
     layout: "fullscreen",
   },
   render: () => (
-    <div className={`c2-foundation ${styles.page}`}>
-      <SiteHeader currentPath="/work" />
+    <div className={`portfolio-foundation ${styles.page}`}>
+      <SiteHeader brand="Portfolio" currentPath="/work" />
 
       <main>
         <section className={styles.intro}>
@@ -58,17 +59,12 @@ const meta = {
           </Container>
         </section>
 
-        <section
-          className={styles.workIndex}
-          aria-labelledby="work-index-heading"
-        >
+        <section className={styles.workIndex}>
           <Container>
-            <header className={styles.sectionHeader}>
-              <h2 id="work-index-heading" className={styles.sectionTitle}>
-                WORK INDEX
-              </h2>
-              <p className={styles.sectionSummary}>03 selected projects</p>
-            </header>
+            <SectionHeader
+              heading="WORK INDEX"
+              meta="03 selected projects"
+            />
 
             <div>
               {projects.map((project) => (
@@ -84,7 +80,7 @@ const meta = {
         >
           <Container>
             <div className={styles.statement}>
-              <h2 id="how-i-work-heading" className={styles.sectionTitle}>
+              <h2 id="how-i-work-heading" className={styles.statementTitle}>
                 HOW I WORK
               </h2>
               <p className={styles.statementText}>
@@ -109,7 +105,7 @@ export const Desktop: Story = {
     const canvas = within(canvasElement);
     const headings = canvas.getAllByRole("heading", { level: 1 });
     const page = canvasElement.querySelector(`.${styles.page}`);
-    const siteHeader = canvasElement.querySelector(".c2-site-header");
+    const siteHeader = canvasElement.querySelector(".portfolio-site-header");
     const workLink = canvas.getByRole("link", { name: "Work" });
 
     await expect(headings).toHaveLength(1);
@@ -119,6 +115,9 @@ export const Desktop: Story = {
     await expect(siteHeader).toBeVisible();
     await expect(workLink).toHaveAttribute("href", "/work");
     await expect(workLink).toHaveAttribute("aria-current", "page");
+    await expect(
+      canvas.getByRole("heading", { level: 2, name: "WORK INDEX" }),
+    ).toBeVisible();
 
     for (const project of projects) {
       const projectLink = canvas.getByText(project.title).closest("a");

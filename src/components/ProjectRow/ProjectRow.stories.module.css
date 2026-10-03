@@ -1,5 +1,5 @@
 .canvas {
   min-height: 18rem;
-  padding-block: var(--c2-space-lg);
-  background: var(--c2-color-page);
+  padding-block: var(--portfolio-space-lg);
+  background: var(--portfolio-color-page);
 }

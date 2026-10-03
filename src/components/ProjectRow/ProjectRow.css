@@ -1,4 +1,4 @@
-.c2-project-row {
+.portfolio-project-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas:
@@ -6,87 +6,87 @@
     "identity identity"
     "focus focus";
   align-items: start;
-  gap: var(--c2-space-lg) var(--c2-space-sm);
-  padding-block: var(--c2-space-lg);
-  border-bottom: var(--c2-border-width) solid var(--c2-color-border);
-  color: var(--c2-color-text);
+  gap: var(--portfolio-space-lg) var(--portfolio-space-sm);
+  padding-block: var(--portfolio-space-lg);
+  border-bottom: var(--portfolio-border-width) solid var(--portfolio-color-border);
+  color: var(--portfolio-color-text);
   text-decoration: none;
 }
 
-.c2-project-row__index {
+.portfolio-project-row__index {
   grid-area: index;
 }
 
-.c2-project-row__identity {
+.portfolio-project-row__identity {
   grid-area: identity;
 }
 
-.c2-project-row__focus {
+.portfolio-project-row__focus {
   grid-area: focus;
 }
 
-.c2-project-row__arrow {
+.portfolio-project-row__arrow {
   grid-area: arrow;
-  font-size: var(--c2-font-size-heading);
-  line-height: var(--c2-line-height-heading);
+  font-size: var(--portfolio-font-size-heading);
+  line-height: var(--portfolio-line-height-heading);
 }
 
-.c2-project-row__identity,
-.c2-project-row__focus {
+.portfolio-project-row__identity,
+.portfolio-project-row__focus {
   display: grid;
   min-width: 0;
-  gap: var(--c2-space-xs);
+  gap: var(--portfolio-space-xs);
 }
 
-.c2-project-row__index,
-.c2-project-row__label {
-  color: var(--c2-color-text-muted);
-  font-family: var(--c2-font-body);
-  font-size: var(--c2-font-size-meta);
-  font-weight: var(--c2-font-weight-medium);
-  letter-spacing: var(--c2-letter-spacing-meta);
-  line-height: var(--c2-line-height-meta);
+.portfolio-project-row__index,
+.portfolio-project-row__label {
+  color: var(--portfolio-color-text-muted);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-meta);
+  font-weight: var(--portfolio-font-weight-medium);
+  letter-spacing: var(--portfolio-letter-spacing-meta);
+  line-height: var(--portfolio-line-height-meta);
   text-transform: uppercase;
 }
 
-.c2-project-row__title {
+.portfolio-project-row__title {
   overflow-wrap: anywhere;
-  font-family: var(--c2-font-heading);
-  font-size: var(--c2-font-size-heading);
-  font-weight: var(--c2-font-weight-bold);
-  letter-spacing: var(--c2-letter-spacing-heading);
-  line-height: var(--c2-line-height-heading);
+  font-family: var(--portfolio-font-heading);
+  font-size: var(--portfolio-font-size-heading);
+  font-weight: var(--portfolio-font-weight-bold);
+  letter-spacing: var(--portfolio-letter-spacing-heading);
+  line-height: var(--portfolio-line-height-heading);
 }
 
-.c2-project-row__focus-value {
+.portfolio-project-row__focus-value {
   overflow-wrap: anywhere;
-  color: var(--c2-color-text-muted);
-  font-family: var(--c2-font-body);
-  font-size: var(--c2-font-size-body);
-  font-weight: var(--c2-font-weight-regular);
-  line-height: var(--c2-line-height-body);
+  color: var(--portfolio-color-text-muted);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-body);
+  font-weight: var(--portfolio-font-weight-regular);
+  line-height: var(--portfolio-line-height-body);
 }
 
-.c2-project-row:hover .c2-project-row__title {
+.portfolio-project-row:hover .portfolio-project-row__title {
   text-decoration: underline;
-  text-decoration-thickness: var(--c2-border-width);
-  text-underline-offset: var(--c2-space-xs);
+  text-decoration-thickness: var(--portfolio-border-width);
+  text-underline-offset: var(--portfolio-space-xs);
 }
 
-.c2-project-row:focus-visible {
-  border-radius: var(--c2-radius-subtle);
-  outline: var(--c2-focus-width) solid var(--c2-color-focus);
-  outline-offset: var(--c2-focus-offset);
+.portfolio-project-row:focus-visible {
+  border-radius: var(--portfolio-radius-subtle);
+  outline: var(--portfolio-focus-width) solid var(--portfolio-color-focus);
+  outline-offset: var(--portfolio-focus-offset);
 }
 
 @media (min-width: 48rem) {
-  .c2-project-row {
+  .portfolio-project-row {
     grid-template-columns:
-      minmax(var(--c2-space-lg), 0.35fr)
+      minmax(var(--portfolio-space-lg), 0.35fr)
       minmax(0, 1.15fr)
       minmax(0, 1fr)
       auto;
     grid-template-areas: "index identity focus arrow";
-    column-gap: var(--c2-space-lg);
+    column-gap: var(--portfolio-space-lg);
   }
 }

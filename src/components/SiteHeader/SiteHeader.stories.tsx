@@ -11,6 +11,9 @@ const meta = {
     layout: "fullscreen",
   },
   tags: ["autodocs"],
+  args: {
+    brand: "Portfolio",
+  },
   render: (args) => (
     <div className={styles.canvas}>
       <SiteHeader {...args} />
@@ -24,12 +27,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const brand = canvas.getByRole("link", { name: "KEIGO KUDO" });
+    const brand = canvas.getByRole("link", { name: "Portfolio" });
     const work = canvas.getByRole("link", { name: "Work" });
     const about = canvas.getByRole("link", { name: "About" });
     const github = canvas.getByRole("link", { name: "GitHub" });
 
     await expect(brand).toHaveAttribute("href", "/");
+    await expect(canvas.queryByText("KEIGO KUDO")).not.toBeInTheDocument();
     await expect(work).toHaveAttribute("href", "/work");
     await expect(about).toHaveAttribute("href", "/about");
     await expect(github).toHaveAttribute(
@@ -76,5 +80,20 @@ export const WorkCurrent: Story = {
     await expect(
       canvas.getByRole("link", { name: "About" }),
     ).not.toHaveAttribute("aria-current");
+  },
+};
+
+export const AccessibleBrandLabel: Story = {
+  args: {
+    brand: <span aria-hidden="true">P</span>,
+    brandAriaLabel: "Home",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    await expect(canvas.getByRole("link", { name: "Home" })).toHaveAttribute(
+      "href",
+      "/",
+    );
   },
 };

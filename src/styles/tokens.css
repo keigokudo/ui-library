@@ -1,64 +1,64 @@
 :root {
   /* Colour */
-  --c2-color-page: #f5f2eb;
-  --c2-color-surface: #ffffff;
-  --c2-color-surface-subtle: #ebe7de;
-  --c2-color-text: #1b1b18;
-  --c2-color-text-muted: #5d5b54;
-  --c2-color-border: #d7d1c6;
-  --c2-color-border-strong: #8a8479;
-  --c2-color-accent: #2f55d4;
-  --c2-color-accent-contrast: #ffffff;
-  --c2-color-focus: #2f55d4;
-  --c2-color-selection: #dbe3ff;
+  --portfolio-color-page: #f5f2eb;
+  --portfolio-color-surface: #ffffff;
+  --portfolio-color-surface-subtle: #ebe7de;
+  --portfolio-color-text: #1b1b18;
+  --portfolio-color-text-muted: #5d5b54;
+  --portfolio-color-border: #d7d1c6;
+  --portfolio-color-border-strong: #8a8479;
+  --portfolio-color-accent: #2f55d4;
+  --portfolio-color-accent-contrast: #ffffff;
+  --portfolio-color-focus: #2f55d4;
+  --portfolio-color-selection: #dbe3ff;
 
   /* Typography: consumers may provide Inter; system fonts are the fallback. */
-  --c2-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+  --portfolio-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  --c2-font-heading: var(--c2-font-body);
-  --c2-font-weight-regular: 400;
-  --c2-font-weight-medium: 500;
-  --c2-font-weight-bold: 700;
-  --c2-font-size-display: clamp(2.75rem, 8vw, 5rem);
-  --c2-font-size-heading: clamp(1.75rem, 4vw, 2.5rem);
-  --c2-font-size-body: 1rem;
-  --c2-font-size-meta: 0.8125rem;
-  --c2-line-height-heading: 1.02;
-  --c2-line-height-body: 1.6;
-  --c2-line-height-meta: 1.45;
-  --c2-letter-spacing-heading: -0.04em;
-  --c2-letter-spacing-meta: 0.04em;
+  --portfolio-font-heading: var(--portfolio-font-body);
+  --portfolio-font-weight-regular: 400;
+  --portfolio-font-weight-medium: 500;
+  --portfolio-font-weight-bold: 700;
+  --portfolio-font-size-display: clamp(2.75rem, 8vw, 5rem);
+  --portfolio-font-size-heading: clamp(1.75rem, 4vw, 2.5rem);
+  --portfolio-font-size-body: 1rem;
+  --portfolio-font-size-meta: 0.8125rem;
+  --portfolio-line-height-heading: 1.02;
+  --portfolio-line-height-body: 1.6;
+  --portfolio-line-height-meta: 1.45;
+  --portfolio-letter-spacing-heading: -0.04em;
+  --portfolio-letter-spacing-meta: 0.04em;
 
   /* Spacing */
-  --c2-space-xs: 0.5rem;
-  --c2-space-sm: 1rem;
-  --c2-space-md: 1.5rem;
-  --c2-space-lg: 2.5rem;
-  --c2-space-xl: 4rem;
-  --c2-space-2xl: 7.5rem;
+  --portfolio-space-xs: 0.5rem;
+  --portfolio-space-sm: 1rem;
+  --portfolio-space-md: 1.5rem;
+  --portfolio-space-lg: 2.5rem;
+  --portfolio-space-xl: 4rem;
+  --portfolio-space-2xl: 7.5rem;
 
   /* Shape and borders */
-  --c2-radius-subtle: 0.25rem;
-  --c2-radius-medium: 0.75rem;
-  --c2-radius-pill: 999px;
-  --c2-border-width: 1px;
+  --portfolio-radius-subtle: 0.25rem;
+  --portfolio-radius-medium: 0.75rem;
+  --portfolio-radius-pill: 999px;
+  --portfolio-border-width: 1px;
 
   /* Layout */
-  --c2-layout-page-max: 90rem;
-  --c2-layout-content-max: 46rem;
-  --c2-layout-gutter: clamp(1.25rem, 4vw, 4rem);
-  --c2-layout-section-gap: var(--c2-space-2xl);
-  --c2-layout-section-gap-compact: var(--c2-space-xl);
+  --portfolio-layout-page-max: 90rem;
+  --portfolio-layout-content-max: 46rem;
+  --portfolio-layout-gutter: clamp(1.25rem, 4vw, 4rem);
+  --portfolio-layout-section-gap: var(--portfolio-space-2xl);
+  --portfolio-layout-section-gap-compact: var(--portfolio-space-xl);
 
   /* Interaction */
-  --c2-focus-width: 3px;
-  --c2-focus-offset: 3px;
-  --c2-transition-duration: 160ms;
-  --c2-transition-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --portfolio-focus-width: 3px;
+  --portfolio-focus-offset: 3px;
+  --portfolio-transition-duration: 160ms;
+  --portfolio-transition-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-    --c2-transition-duration: 0.01ms;
+    --portfolio-transition-duration: 0.01ms;
   }
 }

@@ -9,18 +9,18 @@ export type SiteFooterProps = ComponentPropsWithoutRef<"footer">;
 
 export const SiteFooter = forwardRef<HTMLElement, SiteFooterProps>(
   function SiteFooter({ className, ...props }, ref) {
-    const classes = ["c2-site-footer", className].filter(Boolean).join(" ");
+    const classes = ["portfolio-site-footer", className].filter(Boolean).join(" ");
 
     return (
       <footer ref={ref} className={classes} {...props}>
         <Container>
-          <div className="c2-site-footer__row">
-            <p className="c2-site-footer__message">
+          <div className="portfolio-site-footer__row">
+            <p className="portfolio-site-footer__message">
               Let’s build something that lasts.
             </p>
 
             <nav aria-label="Contact">
-              <ul className="c2-site-footer__links">
+              <ul className="portfolio-site-footer__links">
                 <li>
                   <a
                     href={GITHUB_URL}

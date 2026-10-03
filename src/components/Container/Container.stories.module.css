@@ -1,27 +1,27 @@
 .canvas {
   min-height: 18rem;
-  padding-block: var(--c2-space-lg);
+  padding-block: var(--portfolio-space-lg);
   background:
     linear-gradient(
       to right,
       transparent calc(50% - 1px),
-      var(--c2-color-border) calc(50% - 1px),
-      var(--c2-color-border) 50%,
+      var(--portfolio-color-border) calc(50% - 1px),
+      var(--portfolio-color-border) 50%,
       transparent 50%
     ),
-    var(--c2-color-surface-subtle);
+    var(--portfolio-color-surface-subtle);
 }
 
 .previewBoundary {
-  outline: var(--c2-border-width) dashed var(--c2-color-accent);
+  outline: var(--portfolio-border-width) dashed var(--portfolio-color-accent);
   outline-offset: -1px;
 }
 
 .content {
   min-height: 12rem;
-  padding: var(--c2-space-md);
-  border: var(--c2-border-width) solid var(--c2-color-border);
-  border-radius: var(--c2-radius-subtle);
-  background: var(--c2-color-surface);
-  color: var(--c2-color-text-muted);
+  padding: var(--portfolio-space-md);
+  border: var(--portfolio-border-width) solid var(--portfolio-color-border);
+  border-radius: var(--portfolio-radius-subtle);
+  background: var(--portfolio-color-surface);
+  color: var(--portfolio-color-text-muted);
 }
