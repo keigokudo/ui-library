@@ -1,35 +1,75 @@
 # @krnjs/react-ui
 
-React UI package for the Portfolio warm editorial design.
+React components and design foundations for the Portfolio warm editorial
+interface. Storybook is the visual component reference:
+[aquamarine-quokka-e5ba7c.netlify.app](https://aquamarine-quokka-e5ba7c.netlify.app/).
 
-The package exports the portfolio components and the CSS design foundation they
-consume.
+## Installation
 
-## Styles
+```bash
+npm install @krnjs/react-ui
+```
 
-Import the foundation explicitly from the application entry point:
+Import the required stylesheet once in the consuming application:
 
 ```ts
 import "@krnjs/react-ui/styles.css";
 ```
 
-The import registers semantic `--portfolio-*` custom properties. Add
-`class="portfolio-foundation"` to an application region to opt into the inherited page
-colour, typography, selection, and focus-visible defaults.
+Apply `portfolio-foundation` at an appropriate application root to opt into the
+inherited page colour, typography, selection, and focus-visible defaults:
 
-The font stack prefers `Inter` when the consumer provides it and otherwise uses
-system UI fonts. The package does not load or bundle fonts.
+```tsx
+<body className="portfolio-foundation">...</body>
+```
+
+The stylesheet also registers the semantic `--portfolio-*` custom properties.
+Consumers may provide Inter; otherwise the foundation uses its system-font
+fallbacks.
+
+## Components
+
+- `Container`
+- `Tag`
+- `SiteHeader`
+- `SiteFooter`
+- `ProjectRow`
+- `SectionHeader`
+- `PageIntro`
+
+```tsx
+import {
+  Container,
+  PageIntro,
+  SiteHeader,
+} from "@krnjs/react-ui";
+import "@krnjs/react-ui/styles.css";
+
+export function PortfolioIntro() {
+  return (
+    <div className="portfolio-foundation">
+      <SiteHeader brand="Portfolio" currentPath="/" />
+      <main>
+        <PageIntro
+          eyebrow="SOFTWARE ENGINEER"
+          heading="Thoughtful software, built to last."
+          description="Clear interfaces, practical integrations and maintainable systems."
+        />
+        <Container>Additional page content</Container>
+      </main>
+    </div>
+  );
+}
+```
+
+React and React DOM are peer dependencies and must be provided by the consuming
+application.
 
 ## Development
 
 ```bash
 npm install
 npm run storybook
-```
-
-Useful checks:
-
-```bash
 npm run typecheck
 npm run lint
 npm test
@@ -38,12 +78,5 @@ npm run build-storybook
 npm pack --dry-run
 ```
 
-## Package policy
-
-- The published package is ESM-only and exposes only its root entry point.
-- React and React DOM are peer dependencies and are never bundled. They are
-  also development dependencies for local Storybook and tests.
-- CSS is available only through the explicit `styles.css` subpath; importing
-  the JavaScript entry point does not inject styles.
-- JavaScript remains tree-shakeable. CSS files alone are marked as side effects
-  so bundlers retain an explicit stylesheet import.
+The package is ESM-only. JavaScript imports do not inject CSS; use the explicit
+`@krnjs/react-ui/styles.css` export shown above.
