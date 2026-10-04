@@ -33,6 +33,9 @@ fallbacks.
 - `Button`
 - `ButtonLink`
 - `IconButton`
+- `Input`
+- `Textarea`
+- `Select`
 - `Tag`
 - `SiteHeader`
 - `SiteFooter`

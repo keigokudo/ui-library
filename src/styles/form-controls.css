@@ -1,0 +1,75 @@
+.portfolio-form-control {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  border: var(--portfolio-border-width) solid
+    var(--portfolio-color-border-strong);
+  border-radius: var(--portfolio-radius-subtle);
+  background: var(--portfolio-color-surface);
+  color: var(--portfolio-color-text);
+  font-family: var(--portfolio-font-body);
+  font-weight: var(--portfolio-font-weight-regular);
+  line-height: var(--portfolio-line-height-body);
+  transition:
+    background-color var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing),
+    border-color var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing),
+    color var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing),
+    box-shadow var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing);
+}
+
+.portfolio-form-control::placeholder {
+  color: var(--portfolio-color-text-muted);
+  opacity: 1;
+}
+
+.portfolio-form-control:hover:not(:disabled) {
+  border-color: var(--portfolio-color-text);
+}
+
+.portfolio-form-control:focus {
+  border-color: var(--portfolio-color-focus);
+}
+
+.portfolio-form-control:focus-visible {
+  outline: var(--portfolio-focus-width) solid var(--portfolio-color-focus);
+  outline-offset: var(--portfolio-focus-offset);
+}
+
+.portfolio-form-control:disabled {
+  border-color: var(--portfolio-color-border);
+  background: var(--portfolio-color-surface-subtle);
+  color: var(--portfolio-color-text-muted);
+  cursor: not-allowed;
+}
+
+.portfolio-form-control:read-only:not(select) {
+  background: var(--portfolio-color-page);
+}
+
+.portfolio-form-control[aria-invalid="true"] {
+  border-color: var(--portfolio-color-accent);
+  box-shadow: inset 0 0 0 var(--portfolio-border-width)
+    var(--portfolio-color-accent);
+}
+
+.portfolio-form-control--sm {
+  min-height: calc(var(--portfolio-space-sm) + var(--portfolio-space-sm));
+  padding: calc(var(--portfolio-space-xs) / 2) var(--portfolio-space-xs);
+  font-size: var(--portfolio-font-size-meta);
+}
+
+.portfolio-form-control--md {
+  min-height: var(--portfolio-space-lg);
+  padding: var(--portfolio-space-xs) var(--portfolio-space-sm);
+  font-size: var(--portfolio-font-size-body);
+}
+
+.portfolio-form-control--lg {
+  min-height: calc(var(--portfolio-space-lg) + var(--portfolio-space-sm));
+  padding: var(--portfolio-space-sm) var(--portfolio-space-md);
+  font-size: var(--portfolio-font-size-body);
+}

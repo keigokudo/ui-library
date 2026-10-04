@@ -18,6 +18,18 @@ export type {
   IconButtonSize,
   IconButtonVariant,
 } from "./components/IconButton/IconButton";
+export { Input } from "./components/Input/Input";
+export type { InputControlSize, InputProps } from "./components/Input/Input";
+export { Textarea } from "./components/Textarea/Textarea";
+export type {
+  TextareaControlSize,
+  TextareaProps,
+} from "./components/Textarea/Textarea";
+export { Select } from "./components/Select/Select";
+export type {
+  SelectControlSize,
+  SelectProps,
+} from "./components/Select/Select";
 export { Tag } from "./components/Tag/Tag";
 export type { TagProps } from "./components/Tag/Tag";
 export { SiteHeader } from "./components/SiteHeader/SiteHeader";
