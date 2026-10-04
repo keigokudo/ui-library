@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, within } from "storybook/test";
 
 import {
+  ButtonLink,
   Container,
   PageIntro,
   ProjectRow,
@@ -28,15 +29,12 @@ const meta = {
           description="Deep frontend expertise, with practical experience across backend systems, APIs, integrations and cloud platforms."
           actions={
             <>
-              <a
-                className={`${styles.action} ${styles.actionPrimary}`}
-                href="#selected-work"
-              >
+              <ButtonLink href="#selected-work" size="sm">
                 Selected work
-              </a>
-              <a className={styles.action} href="/about">
+              </ButtonLink>
+              <ButtonLink href="/about" size="sm" variant="secondary">
                 About me
-              </a>
+              </ButtonLink>
             </>
           }
         />

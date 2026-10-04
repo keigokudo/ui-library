@@ -17,6 +17,11 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./portfolio": {
+      "types": "./dist/portfolio.d.ts",
+      "import": "./dist/portfolio.js",
+      "default": "./dist/portfolio.js"
+    },
     "./styles.css": "./dist/styles.css"
   },
   "scripts": {

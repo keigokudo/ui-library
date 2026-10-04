@@ -84,14 +84,16 @@ export const Tones: Story = {
 
 export const WithTitle: Story = {
   args: {
-    title: "Check your details",
+    title: <span>Check your details</span>,
     tone: "warning",
     children: "Some information needs attention before you continue.",
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await expect(canvas.getByText("Check your details").tagName).toBe("STRONG");
+    await expect(
+      canvas.getByText("Check your details").closest("strong"),
+    ).toHaveClass("portfolio-alert__title");
     await expect(
       canvas.getByText("Some information needs attention before you continue."),
     ).toBeVisible();

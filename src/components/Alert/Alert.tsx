@@ -3,7 +3,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 export type AlertTone = "info" | "success" | "warning" | "error";
 
-export type AlertProps = ComponentPropsWithoutRef<"div"> & {
+export type AlertProps = Omit<ComponentPropsWithoutRef<"div">, "title"> & {
   tone?: AlertTone;
   title?: ReactNode;
 };

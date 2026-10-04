@@ -27,7 +27,7 @@ The stylesheet also registers the semantic `--portfolio-*` custom properties.
 Consumers may provide Inter; otherwise the foundation uses its system-font
 fallbacks.
 
-## Components
+## Generic UI primitives
 
 - `Container`
 - `Button`
@@ -44,19 +44,32 @@ fallbacks.
 - `Spinner`
 - `VisuallyHidden`
 - `Progress`
-- `Tag`
-- `SiteHeader`
-- `SiteFooter`
-- `ProjectRow`
-- `SectionHeader`
-- `PageIntro`
+
+Import generic primitives from the package root:
 
 ```tsx
-import {
-  Container,
-  PageIntro,
-  SiteHeader,
-} from "@krnjs/react-ui";
+import { Alert, Button, Input, Progress } from "@krnjs/react-ui";
+import "@krnjs/react-ui/styles.css";
+```
+
+## Portfolio patterns
+
+The preferred entry point for the more opinionated site and editorial patterns
+is `@krnjs/react-ui/portfolio`:
+
+- `Tag`
+- `PageIntro`
+- `SectionHeader`
+- `ProjectRow`
+- `SiteHeader`
+- `SiteFooter`
+
+Root imports of these components remain available for compatibility in 0.2.0,
+but new Portfolio code should use the dedicated subpath.
+
+```tsx
+import { Container } from "@krnjs/react-ui";
+import { PageIntro, SiteHeader } from "@krnjs/react-ui/portfolio";
 import "@krnjs/react-ui/styles.css";
 
 export function PortfolioIntro() {

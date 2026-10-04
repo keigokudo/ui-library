@@ -3,12 +3,14 @@ import { defineConfig } from "tsup";
 export default defineConfig({
   entry: {
     index: "src/index.ts",
+    portfolio: "src/portfolio.ts",
     styles: "src/styles/index.css",
   },
   format: ["esm"],
   dts: {
     entry: {
       index: "src/index.ts",
+      portfolio: "src/portfolio.ts",
     },
   },
   outDir: "dist",

@@ -5,7 +5,7 @@ import { Tag } from "./Tag";
 import styles from "./Tag.stories.module.css";
 
 const meta = {
-  title: "Components/Tag",
+  title: "Portfolio/Tag",
   component: Tag,
   parameters: {
     layout: "fullscreen",

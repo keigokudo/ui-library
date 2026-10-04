@@ -8,39 +8,6 @@
   padding-block: var(--portfolio-layout-section-gap-compact);
 }
 
-.action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--portfolio-space-xs) var(--portfolio-space-sm);
-  border: var(--portfolio-border-width) solid var(--portfolio-color-border-strong);
-  border-radius: var(--portfolio-radius-subtle);
-  color: var(--portfolio-color-text);
-  font-family: var(--portfolio-font-body);
-  font-size: var(--portfolio-font-size-meta);
-  font-weight: var(--portfolio-font-weight-medium);
-  letter-spacing: var(--portfolio-letter-spacing-meta);
-  line-height: var(--portfolio-line-height-meta);
-  text-decoration: none;
-}
-
-.actionPrimary {
-  border-color: var(--portfolio-color-text);
-  background: var(--portfolio-color-text);
-  color: var(--portfolio-color-page);
-}
-
-.action:hover {
-  text-decoration: underline;
-  text-decoration-thickness: var(--portfolio-border-width);
-  text-underline-offset: var(--portfolio-space-xs);
-}
-
-.action:focus-visible {
-  outline: var(--portfolio-focus-width) solid var(--portfolio-color-focus);
-  outline-offset: var(--portfolio-focus-offset);
-}
-
 .selectedWork {
   padding-bottom: var(--portfolio-layout-section-gap-compact);
   scroll-margin-top: var(--portfolio-space-md);
