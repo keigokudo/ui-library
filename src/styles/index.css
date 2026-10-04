@@ -17,6 +17,8 @@
 @import "../components/Alert/Alert.css";
 @import "../components/Badge/Badge.css";
 @import "../components/Spinner/Spinner.css";
+@import "../components/VisuallyHidden/VisuallyHidden.css";
+@import "../components/Progress/Progress.css";
 @import "../components/Tag/Tag.css";
 @import "../components/SiteHeader/SiteHeader.css";
 @import "../components/SiteFooter/SiteFooter.css";

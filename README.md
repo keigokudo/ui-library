@@ -42,6 +42,8 @@ fallbacks.
 - `Alert`
 - `Badge`
 - `Spinner`
+- `VisuallyHidden`
+- `Progress`
 - `Tag`
 - `SiteHeader`
 - `SiteFooter`

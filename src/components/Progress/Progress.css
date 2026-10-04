@@ -1,0 +1,14 @@
+.portfolio-progress {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: var(--portfolio-space-xs);
+  overflow: hidden;
+  border: var(--portfolio-border-width) solid var(--portfolio-color-border);
+  border-radius: var(--portfolio-radius-pill);
+  background: var(--portfolio-color-surface-subtle);
+  color: var(--portfolio-color-accent);
+  accent-color: var(--portfolio-color-accent);
+  vertical-align: middle;
+}
