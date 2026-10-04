@@ -30,6 +30,7 @@ fallbacks.
 ## Components
 
 - `Container`
+- `Button`
 - `Tag`
 - `SiteHeader`
 - `SiteFooter`
