@@ -1,0 +1,22 @@
+.canvas {
+  min-height: 12rem;
+  padding: var(--portfolio-space-lg);
+  background: var(--portfolio-color-page);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--portfolio-space-sm);
+}
+
+.narrow {
+  width: 100%;
+  max-width: 20rem;
+}
+
+.label {
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-meta);
+}

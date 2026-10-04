@@ -6,6 +6,18 @@ export type {
   ButtonSize,
   ButtonVariant,
 } from "./components/Button/Button";
+export { ButtonLink } from "./components/ButtonLink/ButtonLink";
+export type {
+  ButtonLinkProps,
+  ButtonLinkSize,
+  ButtonLinkVariant,
+} from "./components/ButtonLink/ButtonLink";
+export { IconButton } from "./components/IconButton/IconButton";
+export type {
+  IconButtonProps,
+  IconButtonSize,
+  IconButtonVariant,
+} from "./components/IconButton/IconButton";
 export { Tag } from "./components/Tag/Tag";
 export type { TagProps } from "./components/Tag/Tag";
 export { SiteHeader } from "./components/SiteHeader/SiteHeader";

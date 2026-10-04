@@ -31,6 +31,8 @@ fallbacks.
 
 - `Container`
 - `Button`
+- `ButtonLink`
+- `IconButton`
 - `Tag`
 - `SiteHeader`
 - `SiteFooter`

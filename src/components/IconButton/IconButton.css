@@ -1,0 +1,27 @@
+.portfolio-icon-button {
+  flex: 0 0 auto;
+  padding: 0;
+  line-height: 1;
+}
+
+.portfolio-icon-button:disabled {
+  pointer-events: none;
+}
+
+.portfolio-icon-button--sm {
+  width: calc(var(--portfolio-space-sm) + var(--portfolio-space-sm));
+  height: calc(var(--portfolio-space-sm) + var(--portfolio-space-sm));
+  font-size: var(--portfolio-font-size-meta);
+}
+
+.portfolio-icon-button--md {
+  width: var(--portfolio-space-lg);
+  height: var(--portfolio-space-lg);
+  font-size: var(--portfolio-font-size-body);
+}
+
+.portfolio-icon-button--lg {
+  width: calc(var(--portfolio-space-lg) + var(--portfolio-space-sm));
+  height: calc(var(--portfolio-space-lg) + var(--portfolio-space-sm));
+  font-size: var(--portfolio-font-size-body);
+}

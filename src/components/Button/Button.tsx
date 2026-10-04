@@ -22,6 +22,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref,
   ) {
     const classes = [
+      "portfolio-action",
+      `portfolio-action--${variant}`,
+      `portfolio-action--${size}`,
       "portfolio-button",
       `portfolio-button--${variant}`,
       `portfolio-button--${size}`,
