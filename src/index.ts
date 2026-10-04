@@ -30,6 +30,24 @@ export type {
   SelectControlSize,
   SelectProps,
 } from "./components/Select/Select";
+export { Checkbox } from "./components/Checkbox/Checkbox";
+export type {
+  CheckboxControlSize,
+  CheckboxProps,
+} from "./components/Checkbox/Checkbox";
+export { Radio } from "./components/Radio/Radio";
+export type { RadioControlSize, RadioProps } from "./components/Radio/Radio";
+export { Switch } from "./components/Switch/Switch";
+export type {
+  SwitchControlSize,
+  SwitchProps,
+} from "./components/Switch/Switch";
+export { Alert } from "./components/Alert/Alert";
+export type { AlertProps, AlertTone } from "./components/Alert/Alert";
+export { Badge } from "./components/Badge/Badge";
+export type { BadgeProps, BadgeTone } from "./components/Badge/Badge";
+export { Spinner } from "./components/Spinner/Spinner";
+export type { SpinnerProps, SpinnerSize } from "./components/Spinner/Spinner";
 export { Tag } from "./components/Tag/Tag";
 export type { TagProps } from "./components/Tag/Tag";
 export { SiteHeader } from "./components/SiteHeader/SiteHeader";

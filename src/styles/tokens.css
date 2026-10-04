@@ -12,6 +12,20 @@
   --portfolio-color-focus: #2f55d4;
   --portfolio-color-selection: #dbe3ff;
 
+  /* Semantic status */
+  --portfolio-color-status-info-foreground: #20385f;
+  --portfolio-color-status-info-background: #e8edf8;
+  --portfolio-color-status-info-border: #6d84af;
+  --portfolio-color-status-success-foreground: #234d2d;
+  --portfolio-color-status-success-background: #e4efe6;
+  --portfolio-color-status-success-border: #668a6d;
+  --portfolio-color-status-warning-foreground: #5c3b0b;
+  --portfolio-color-status-warning-background: #f5ead0;
+  --portfolio-color-status-warning-border: #9e7736;
+  --portfolio-color-status-error-foreground: #6b2621;
+  --portfolio-color-status-error-background: #f3e2df;
+  --portfolio-color-status-error-border: #a96d64;
+
   /* Typography: consumers may provide Inter; system fonts are the fallback. */
   --portfolio-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;

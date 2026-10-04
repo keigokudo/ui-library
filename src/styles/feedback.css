@@ -1,0 +1,39 @@
+.portfolio-feedback-tone--info {
+  --portfolio-feedback-foreground: var(
+    --portfolio-color-status-info-foreground
+  );
+  --portfolio-feedback-background: var(
+    --portfolio-color-status-info-background
+  );
+  --portfolio-feedback-border: var(--portfolio-color-status-info-border);
+}
+
+.portfolio-feedback-tone--success {
+  --portfolio-feedback-foreground: var(
+    --portfolio-color-status-success-foreground
+  );
+  --portfolio-feedback-background: var(
+    --portfolio-color-status-success-background
+  );
+  --portfolio-feedback-border: var(--portfolio-color-status-success-border);
+}
+
+.portfolio-feedback-tone--warning {
+  --portfolio-feedback-foreground: var(
+    --portfolio-color-status-warning-foreground
+  );
+  --portfolio-feedback-background: var(
+    --portfolio-color-status-warning-background
+  );
+  --portfolio-feedback-border: var(--portfolio-color-status-warning-border);
+}
+
+.portfolio-feedback-tone--error {
+  --portfolio-feedback-foreground: var(
+    --portfolio-color-status-error-foreground
+  );
+  --portfolio-feedback-background: var(
+    --portfolio-color-status-error-background
+  );
+  --portfolio-feedback-border: var(--portfolio-color-status-error-border);
+}

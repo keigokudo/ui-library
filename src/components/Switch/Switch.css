@@ -1,0 +1,76 @@
+.portfolio-switch {
+  position: relative;
+  width: calc(
+    var(--portfolio-selection-control-size) +
+      var(--portfolio-selection-control-size)
+  );
+  height: var(--portfolio-selection-control-size);
+  padding: 0;
+  appearance: none;
+  border: var(--portfolio-border-width) solid
+    var(--portfolio-color-border-strong);
+  border-radius: var(--portfolio-radius-pill);
+  background: var(--portfolio-color-surface);
+}
+
+.portfolio-switch::before {
+  position: absolute;
+  inset-block-start: var(--portfolio-border-width);
+  inset-inline-start: var(--portfolio-border-width);
+  width: calc(
+    var(--portfolio-selection-control-size) -
+      var(--portfolio-border-width) - var(--portfolio-border-width)
+  );
+  height: calc(
+    var(--portfolio-selection-control-size) -
+      var(--portfolio-border-width) - var(--portfolio-border-width)
+  );
+  border-radius: var(--portfolio-radius-pill);
+  background: var(--portfolio-color-text-muted);
+  content: "";
+  transition:
+    background-color var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing),
+    transform var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing);
+}
+
+.portfolio-switch:hover:not(:disabled) {
+  border-color: var(--portfolio-color-text);
+}
+
+.portfolio-switch:checked {
+  border-color: var(--portfolio-color-accent);
+  background: var(--portfolio-color-accent);
+}
+
+.portfolio-switch:checked::before {
+  background: var(--portfolio-color-accent-contrast);
+  transform: translateX(var(--portfolio-selection-control-size));
+}
+
+.portfolio-switch:disabled {
+  border-color: var(--portfolio-color-border);
+  background: var(--portfolio-color-surface-subtle);
+}
+
+.portfolio-switch:disabled::before {
+  background: var(--portfolio-color-border-strong);
+}
+
+.portfolio-switch:checked:disabled::before {
+  background: var(--portfolio-color-text-muted);
+}
+
+@media (forced-colors: active) {
+  .portfolio-switch {
+    width: var(--portfolio-selection-control-size);
+    appearance: auto;
+    border: 0;
+    background: Canvas;
+  }
+
+  .portfolio-switch::before {
+    content: none;
+  }
+}

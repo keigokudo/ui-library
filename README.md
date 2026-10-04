@@ -36,6 +36,12 @@ fallbacks.
 - `Input`
 - `Textarea`
 - `Select`
+- `Checkbox`
+- `Radio`
+- `Switch`
+- `Alert`
+- `Badge`
+- `Spinner`
 - `Tag`
 - `SiteHeader`
 - `SiteFooter`

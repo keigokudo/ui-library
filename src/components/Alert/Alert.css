@@ -1,0 +1,19 @@
+.portfolio-alert {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: var(--portfolio-space-md);
+  border: var(--portfolio-border-width) solid var(--portfolio-feedback-border);
+  border-radius: var(--portfolio-radius-subtle);
+  background: var(--portfolio-feedback-background);
+  color: var(--portfolio-feedback-foreground);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-body);
+  line-height: var(--portfolio-line-height-body);
+  overflow-wrap: anywhere;
+}
+
+.portfolio-alert__title {
+  display: block;
+  margin-bottom: var(--portfolio-space-xs);
+  font-weight: var(--portfolio-font-weight-bold);
+}

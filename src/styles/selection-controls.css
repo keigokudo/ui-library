@@ -1,0 +1,51 @@
+.portfolio-selection-control {
+  --portfolio-selection-control-size: var(--portfolio-space-md);
+
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  margin: 0;
+  accent-color: var(--portfolio-color-accent);
+  color: var(--portfolio-color-text);
+  cursor: pointer;
+  vertical-align: middle;
+  transition:
+    background-color var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing),
+    border-color var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing),
+    color var(--portfolio-transition-duration)
+      var(--portfolio-transition-easing);
+}
+
+.portfolio-selection-control:focus-visible {
+  outline: var(--portfolio-focus-width) solid var(--portfolio-color-focus);
+  outline-offset: var(--portfolio-focus-offset);
+}
+
+.portfolio-selection-control:disabled {
+  cursor: not-allowed;
+}
+
+.portfolio-selection-control[aria-invalid="true"] {
+  outline: var(--portfolio-border-width) solid
+    var(--portfolio-color-status-error-border);
+  outline-offset: var(--portfolio-focus-offset);
+}
+
+.portfolio-selection-control[aria-invalid="true"]:focus-visible {
+  outline-width: var(--portfolio-focus-width);
+}
+
+.portfolio-selection-control--sm {
+  --portfolio-selection-control-size: var(--portfolio-space-sm);
+}
+
+.portfolio-selection-control--md {
+  --portfolio-selection-control-size: var(--portfolio-space-md);
+}
+
+.portfolio-selection-control--lg {
+  --portfolio-selection-control-size: calc(
+    var(--portfolio-space-sm) + var(--portfolio-space-sm)
+  );
+}

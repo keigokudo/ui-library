@@ -1,0 +1,24 @@
+.canvas {
+  min-height: 14rem;
+  padding: var(--portfolio-space-lg);
+  background: var(--portfolio-color-page);
+}
+
+.stack {
+  display: grid;
+  max-width: var(--portfolio-layout-content-max);
+  gap: var(--portfolio-space-sm);
+}
+
+.content {
+  margin: 0;
+}
+
+.content + .content {
+  margin-top: var(--portfolio-space-xs);
+}
+
+.narrow {
+  width: 100%;
+  max-width: 20rem;
+}

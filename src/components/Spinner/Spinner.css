@@ -1,0 +1,50 @@
+@keyframes portfolio-spinner-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.portfolio-spinner {
+  box-sizing: border-box;
+  display: inline-block;
+  flex: 0 0 auto;
+  border: calc(
+      var(--portfolio-border-width) + var(--portfolio-border-width)
+    )
+    solid currentColor;
+  border-inline-end-color: transparent;
+  border-radius: var(--portfolio-radius-pill);
+  color: inherit;
+  vertical-align: middle;
+  animation: portfolio-spinner-rotate
+    calc(
+      var(--portfolio-transition-duration) +
+        var(--portfolio-transition-duration) +
+        var(--portfolio-transition-duration) +
+        var(--portfolio-transition-duration) +
+        var(--portfolio-transition-duration)
+    ) linear infinite;
+}
+
+.portfolio-spinner--sm {
+  width: var(--portfolio-space-sm);
+  height: var(--portfolio-space-sm);
+}
+
+.portfolio-spinner--md {
+  width: var(--portfolio-space-md);
+  height: var(--portfolio-space-md);
+}
+
+.portfolio-spinner--lg {
+  width: calc(var(--portfolio-space-sm) + var(--portfolio-space-sm));
+  height: calc(var(--portfolio-space-sm) + var(--portfolio-space-sm));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-spinner {
+    border-block-start-color: transparent;
+    border-inline-end-color: currentColor;
+    animation: none;
+  }
+}

@@ -1,0 +1,26 @@
+.portfolio-badge {
+  box-sizing: border-box;
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  padding: calc(var(--portfolio-space-xs) / 2) var(--portfolio-space-xs);
+  border: var(--portfolio-border-width) solid var(--portfolio-color-border);
+  border-radius: var(--portfolio-radius-pill);
+  background: var(--portfolio-color-surface-subtle);
+  color: var(--portfolio-color-text-muted);
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-meta);
+  font-weight: var(--portfolio-font-weight-medium);
+  letter-spacing: var(--portfolio-letter-spacing-meta);
+  line-height: var(--portfolio-line-height-meta);
+  overflow-wrap: anywhere;
+}
+
+.portfolio-badge--info,
+.portfolio-badge--success,
+.portfolio-badge--warning,
+.portfolio-badge--error {
+  border-color: var(--portfolio-feedback-border);
+  background: var(--portfolio-feedback-background);
+  color: var(--portfolio-feedback-foreground);
+}

@@ -1,0 +1,46 @@
+.canvas {
+  min-height: 12rem;
+  padding: var(--portfolio-space-lg);
+  background: var(--portfolio-color-page);
+  color: var(--portfolio-color-text);
+}
+
+.row,
+.status,
+.buttonLike {
+  display: flex;
+  align-items: center;
+  gap: var(--portfolio-space-sm);
+}
+
+.row {
+  flex-wrap: wrap;
+}
+
+.status,
+.documentation {
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-body);
+  line-height: var(--portfolio-line-height-body);
+}
+
+.buttonLike {
+  width: fit-content;
+  padding: var(--portfolio-space-xs) var(--portfolio-space-md);
+  border: var(--portfolio-border-width) solid var(--portfolio-color-text);
+  border-radius: var(--portfolio-radius-subtle);
+  background: var(--portfolio-color-text);
+  color: var(--portfolio-color-surface);
+  font-family: var(--portfolio-font-body);
+  font-weight: var(--portfolio-font-weight-medium);
+}
+
+.documentation {
+  max-width: var(--portfolio-layout-content-max);
+  margin: var(--portfolio-space-sm) 0 0;
+}
+
+.narrow {
+  width: 100%;
+  max-width: 20rem;
+}

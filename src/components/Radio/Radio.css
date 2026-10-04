@@ -1,0 +1,5 @@
+.portfolio-radio {
+  width: var(--portfolio-selection-control-size);
+  height: var(--portfolio-selection-control-size);
+  border-radius: var(--portfolio-radius-pill);
+}
