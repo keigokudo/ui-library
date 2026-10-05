@@ -64,7 +64,7 @@ is `@krnjs/react-ui/portfolio`:
 - `SiteHeader`
 - `SiteFooter`
 
-Root imports of these components remain available for compatibility in 0.2.0,
+Root imports of these components remain available for compatibility throughout 0.2.x,
 but new Portfolio code should use the dedicated subpath.
 
 ```tsx
