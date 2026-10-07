@@ -100,11 +100,11 @@ function activeRouteStory(currentPath: string, activeLabel?: string): Story {
         }
       }
       const brand = canvas.getByRole("link", { name: "Portfolio" });
-      if (currentPath === "/") {
-        await expect(brand).toHaveAttribute("aria-current", "page");
-      } else {
-        await expect(brand).not.toHaveAttribute("aria-current");
-      }
+      await expect(brand).toHaveAttribute("href", "/");
+      await expect(brand).not.toHaveAttribute("aria-current");
+      await expect(canvasElement.querySelectorAll("[aria-current]")).toHaveLength(
+        activeLabel ? 1 : 0,
+      );
     },
   };
 }

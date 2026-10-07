@@ -34,7 +34,6 @@ export const SiteHeader = forwardRef<HTMLElement, SiteHeaderProps>(
               className="portfolio-site-header__brand"
               href="/"
               aria-label={brandAriaLabel}
-              aria-current={current("/")}
             >
               {brand}
             </a>
