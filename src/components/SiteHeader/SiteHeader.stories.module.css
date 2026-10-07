@@ -2,3 +2,8 @@
   min-height: 12rem;
   background: var(--portfolio-color-page);
 }
+
+.narrow {
+  width: 320px;
+  max-width: 100%;
+}

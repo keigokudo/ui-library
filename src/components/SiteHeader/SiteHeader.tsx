@@ -10,6 +10,7 @@ type InternalPath = "/" | "/work" | "/about";
 export type SiteHeaderProps = ComponentPropsWithoutRef<"header"> & {
   brand: ReactNode;
   brandAriaLabel?: string;
+  /** Current pathname. Non-root navigation also matches slash-delimited descendants. */
   currentPath?: string;
 };
 
@@ -20,7 +21,10 @@ export const SiteHeader = forwardRef<HTMLElement, SiteHeaderProps>(
   ) {
     const classes = ["portfolio-site-header", className].filter(Boolean).join(" ");
     const current = (path: InternalPath) =>
-      currentPath === path ? "page" : undefined;
+      currentPath === path ||
+      (path !== "/" && currentPath?.startsWith(`${path}/`))
+        ? "page"
+        : undefined;
 
     return (
       <header ref={ref} className={classes} {...props}>
@@ -38,6 +42,11 @@ export const SiteHeader = forwardRef<HTMLElement, SiteHeaderProps>(
             <nav aria-label="Primary">
               <ul className="portfolio-site-header__navigation">
                 <li>
+                  <a href="/" aria-current={current("/")}>
+                    Home
+                  </a>
+                </li>
+                <li>
                   <a href="/work" aria-current={current("/work")}>
                     Work
                   </a>
@@ -53,7 +62,7 @@ export const SiteHeader = forwardRef<HTMLElement, SiteHeaderProps>(
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    GitHub
+                    GitHub ↗
                   </a>
                 </li>
               </ul>

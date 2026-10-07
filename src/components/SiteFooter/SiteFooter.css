@@ -6,15 +6,34 @@
 
 .portfolio-site-footer__row {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--portfolio-space-lg);
   padding-block: var(--portfolio-space-xl);
 }
 
-.portfolio-site-footer__message {
+.portfolio-site-footer__message,
+.portfolio-site-footer__identity {
+  min-width: 0;
   max-width: var(--portfolio-layout-content-max);
   margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.portfolio-site-footer__identity {
+  font-family: var(--portfolio-font-body);
+  font-size: var(--portfolio-font-size-meta);
+  font-weight: var(--portfolio-font-weight-regular);
+  letter-spacing: var(--portfolio-letter-spacing-meta);
+  line-height: var(--portfolio-line-height-meta);
+}
+
+.portfolio-site-footer__row > nav {
+  min-width: 0;
+}
+
+.portfolio-site-footer__message {
   font-family: var(--portfolio-font-heading);
   font-size: var(--portfolio-font-size-heading);
   font-weight: var(--portfolio-font-weight-bold);

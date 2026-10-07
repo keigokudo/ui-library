@@ -73,7 +73,11 @@ const meta = {
         </section>
       </main>
 
-      <SiteFooter />
+      <SiteFooter
+        identity="Alex Example · Developer"
+        githubHref="https://github.com/example"
+        linkedinHref="https://www.linkedin.com/in/example"
+      />
     </div>
   ),
 } satisfies Meta;
@@ -88,6 +92,12 @@ export const Desktop: Story = {
     const selectedWork = canvasElement.querySelector("#selected-work");
     const page = canvasElement.querySelector(`.${styles.page}`);
 
+    await expect(canvas.getByRole("link", { name: "Home" })).toHaveAttribute(
+      "aria-current", "page",
+    );
+    await expect(canvas.getByRole("link", { name: "Work" })).not.toHaveAttribute(
+      "aria-current",
+    );
     await expect(headings).toHaveLength(1);
     await expect(headings[0]).toHaveTextContent(
       "Thoughtful software, built to last.",
@@ -124,8 +134,15 @@ export const Desktop: Story = {
       canvas.getByRole("heading", { level: 2, name: "SELECTED WORK" }),
     ).toBeVisible();
     await expect(
-      canvas.getByText("Let’s build something that lasts."),
+      canvas.getByText("Alex Example · Developer"),
     ).toBeVisible();
+    const contact = within(canvas.getByRole("navigation", { name: "Contact" }));
+    await expect(contact.getByRole("link", { name: "GitHub ↗" })).toHaveAttribute(
+      "href", "https://github.com/example",
+    );
+    await expect(contact.getByRole("link", { name: "LinkedIn ↗" })).toHaveAttribute(
+      "href", "https://www.linkedin.com/in/example",
+    );
     await expect(page?.scrollWidth).toBeLessThanOrEqual(page?.clientWidth ?? 0);
   },
 };

@@ -11,7 +11,7 @@ const meta = {
   },
   render: () => (
     <div className={`portfolio-foundation ${styles.page}`}>
-      <SiteHeader brand="Portfolio" />
+      <SiteHeader brand="Portfolio" currentPath="/work/ottobock-expert-search" />
 
       <main>
         <div className={styles.backNavigation}>
@@ -218,7 +218,7 @@ export const OttobockExpertSearch: Story = {
     );
     await expect(
       canvas.getByRole("link", { name: "Work" }),
-    ).not.toHaveAttribute("aria-current");
+    ).toHaveAttribute("aria-current", "page");
     await expect(
       canvas.getByRole("link", { name: "← Back to work" }),
     ).toHaveAttribute("href", "/work");
