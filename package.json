@@ -1,6 +1,6 @@
 {
   "name": "@krnjs/react-ui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React UI package for the Portfolio warm editorial design",
   "type": "module",
   "main": "./dist/index.js",
